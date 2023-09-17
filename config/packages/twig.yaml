@@ -1,5 +1,12 @@
 twig:
     default_path: '%kernel.project_dir%/templates'
+    globals:
+        org:
+            title: les Roves Nomades
+            slogan: 'Élevage pastoral de chèvres du Rove'
+            address: 'Côtes de Fontbonne, 07270 Nozières'
+            logo:
+                src: '/images/logo.png'
 
 when@test:
     twig:

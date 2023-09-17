@@ -1,0 +1,13 @@
+@mixin text-border($thickness, $color: #000) {
+    $shadows: ();
+
+    @for $x from -$thickness through $thickness {
+        @for $y from -$thickness through $thickness {
+            @if $x != 0 or $y != 0 {
+                $shadows: append($shadows, #{$x}px #{$y}px 0 $color, comma);
+            }
+        }
+    }
+
+    text-shadow: $shadows;
+}

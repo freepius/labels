@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{# le bloc head parent n'existe pas => @todo #}
+{# {% block head %}
+    <link rel="stylesheet" href="{{ asset('css/#{label.0}.css') }}">
+{% endblock %} #}
+
+{% block body_class %}container-label{% endblock %}
+
+{% block body %}
+    {{ include ("labels/#{template}.html.twig", label, with_context = false) }}
+{% endblock %}

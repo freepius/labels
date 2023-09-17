@@ -1,0 +1,64 @@
+article.terrine {
+    position: relative;
+    display: grid;
+    grid-template-columns: 39% 47% 10%;
+    column-gap: 2%;
+
+    > header, > main {
+        text-align: center;
+
+        > h1 {
+            color: var(--orange);
+            @include text-border(1);
+        }
+    }
+
+    > header {
+        display: grid;
+        grid-template-rows:  90% 10%;
+
+        > h1 {
+            background: no-repeat center / contain;
+            display: grid;
+            align-content: center;
+            font-size: 3.2em;
+        }
+
+        > h2 {
+            font-size: 1.4em;
+            -webkit-text-stroke: 1px;
+            transform: scaleY(1.25);
+        }
+    }
+
+    > main {
+        align-self: center;
+        height: 85%;
+
+        > h1 {
+            font-size: 5em;
+            letter-spacing: 0.05em;
+        }
+
+        > h2 {
+            margin-top: 0.2em;
+            background-color: var(--blue);
+            color: white;
+            font-size: 3em;
+        }
+
+        .weight {
+            position: absolute;
+            bottom: 0.2em;
+            right: 0.2em;
+            font-size: 0.85em;
+        }
+    }
+
+    > section.ingredients {
+        height: 85%;
+        padding: 5px;
+        font-size: 0.85em;
+        writing-mode: vertical-rl;
+    }
+}
