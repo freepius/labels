@@ -1,7 +1,7 @@
 <section class="ingredients">
     <h1>{{ 'Ingrédients'|trans }}</h1>
     <ul>
-        {% for ingredient in ingredients|merge(ingredients_extra ?? []) %}
+        {% for ingredient in label.ingredients|merge(label.ingredients_extra ?? []) %}
             <li>{{ ingredient }}</li>
         {% endfor %}
     </ul>

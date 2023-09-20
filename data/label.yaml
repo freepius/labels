@@ -1,0 +1,17 @@
+terrine:
+  title: Terrine de Chevreau
+  weight: 180g
+  ingredients:
+    - viande 100% chevreau
+
+terrine-nature:
+  ingredients_extra:
+    - origan
+    - sel
+    - poivre
+
+terrine-foie:
+  ingredients_extra:
+    - dont foie principalement
+    - sel
+    - poivre

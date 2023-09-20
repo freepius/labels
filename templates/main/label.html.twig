@@ -8,5 +8,5 @@
 {% block body_class %}container-label{% endblock %}
 
 {% block body %}
-    {{ include ("labels/#{template}.html.twig", label, with_context = false) }}
+    {{ include(label.templateName, sandboxed = true) }}
 {% endblock %}

@@ -1,0 +1,21 @@
+<article class="label {{ label.ids|join(' ') }} format-180g">
+    <header>
+        <h1 style="background-image: url({{ asset(org.logo.src) }});">
+            {{ org.title }}
+        </h1>
+
+        <h2>{{ org.slogan }}</h2>
+    </header>
+
+    <main>
+        <h1>{{ label.title }}</h1>
+
+        {% if label.ids|length > 1 %}
+            <h2>{{ label.idLast|capitalize }}</h2>
+        {% endif %}
+
+        <p class="weight">{{ 'Poids net :'|trans }} {{ label.weight }}</p>
+    </main>
+
+    {% include 'element/ingredients.html.twig' %}
+</article>
