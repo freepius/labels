@@ -8,5 +8,15 @@
 {% block body_class %}container-label{% endblock %}
 
 {% block body %}
+    <nav>
+        <ul>
+            {% for label in labels %}
+                <li>
+                    <a href="/label/{{ label.id }}">{{ label.id }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>
+
     {{ include(label.templateName, sandboxed = true) }}
 {% endblock %}
