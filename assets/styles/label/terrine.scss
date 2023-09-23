@@ -1,8 +1,8 @@
 article.terrine {
     position: relative;
     display: grid;
-    grid-template-columns: 39% 47% 10%;
-    column-gap: 2%;
+    grid-template-columns: 38% 50% 10%;
+    column-gap: 1%;
 
     > header, > main {
         text-align: center;
@@ -32,33 +32,49 @@ article.terrine {
     }
 
     > main {
-        align-self: center;
-        height: 85%;
+        display: grid;
+        align-items: center;
+        height: 95%;
 
         > h1 {
-            font-size: 5em;
-            letter-spacing: 0.05em;
+            font-size: 6em;
+            letter-spacing: -0.02em;
+            line-height: 0.9em;
         }
 
         > h2 {
-            margin-top: 0.2em;
+            align-self: baseline;
             background-color: var(--blue);
             color: white;
             font-size: 3em;
-        }
 
-        .weight {
-            position: absolute;
-            bottom: 0.2em;
-            right: 0.2em;
-            font-size: 0.85em;
+            &.long {
+                font-size: 2em;
+            }
         }
     }
 
-    > section.ingredients {
+    > aside {
+        display: flex;
+        justify-content: end;
+        overflow: hidden;
         height: 85%;
-        padding: 5px;
+        padding: 0.2em;
         font-size: 0.85em;
-        writing-mode: vertical-rl;
+
+        > .address,
+        > .ingredients {
+            writing-mode: vertical-rl;
+        }
+
+        > .address {
+            margin-right: 0.3em;
+        }
+
+        > .weight {
+            position: absolute;
+            bottom: 0.2em;
+            right: 0.2em;
+        }
     }
 }

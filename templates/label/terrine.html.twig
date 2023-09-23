@@ -1,4 +1,4 @@
-<article class="label {{ label.ids|join(' ') }} format-180g">
+<article class="{{ label.cssClasses }} format-180g">
     <header>
         <h1 style="background-image: url({{ asset(org.logo.src) }});">
             {{ org.title }}
@@ -10,12 +10,22 @@
     <main>
         <h1>{{ label.title }}</h1>
 
-        {% if label.ids|length > 1 %}
-            <h2>{{ label.idLast|capitalize }}</h2>
+        {% if label.hasSubTitle %}
+            <h2 {% if label.subTitle|length > 15 %}class="long"{% endif %}>
+                {{ label.subTitle }}
+            </h2>
         {% endif %}
-
-        <p class="weight">{{ 'Poids net :'|trans }} {{ label.weight }}</p>
     </main>
 
-    {% include 'element/ingredients.html.twig' %}
+    <aside>
+        <section class="address">{{ org.address }}</section>
+
+        {{ include(
+            'label/element/ingredients.html.twig',
+            {ingredients: label.ingredients},
+            with_context = false
+        ) }}
+
+        <section class="weight">{{ 'Poids net :'|trans }} {{ label.weight }}</section>
+    </aside>
 </article>

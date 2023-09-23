@@ -1,0 +1,7 @@
+{% set isArray = ingredients.pre ?? ingredients.main ?? ingredients.post ?? false %}
+{% set ingredients = (isArray ? ingredients : [ingredients])|join(', ') %}
+
+<section class="ingredients {{ ingredients|length > 60 ? 'long' }}">
+    <h1>{{ 'Ingrédients'|trans }}</h1>
+    <p>{{ ingredients }}</p>
+</section>

@@ -1,0 +1,9 @@
+.ingredients {
+    > * {
+        display: inline;
+    }
+
+    h1:after {
+        content: ' :';
+    }
+}

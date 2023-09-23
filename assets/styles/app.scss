@@ -3,8 +3,9 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 @import 'mixins';
-@import 'labels/formats';
-@import 'labels/terrine';
+@import 'label/element/ingredients';
+@import 'label/format';
+@import 'label/terrine';
 
 :root {
     --blue: #6288c0;
@@ -35,19 +36,5 @@ body.container-label {
 article {
     @media screen {
         border: 1px solid black;
-    }
-}
-
-.ingredients {
-    h1, ul, li {
-        display: inline;
-    }
-
-    h1:after {
-        content: ' :';
-    }
-
-    li:not(:last-child):after {
-        content: ',';
     }
 }

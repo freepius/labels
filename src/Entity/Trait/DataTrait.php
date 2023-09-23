@@ -2,6 +2,8 @@
 
 namespace App\Entity\Trait;
 
+use App\Util\ArrayUtil;
+
 /**
  * Implements a way to store data in bulk, as an array.
  */
@@ -21,12 +23,10 @@ trait DataTrait
 
     /**
      * Merge the given data with the existing one.
-     *
-     * @todo Implement a smart recursive merge.
      */
     public function mergeData(array $data): self
     {
-        $this->data += $data;
+        $this->data = ArrayUtil::mergeRecursiceDistinct($data, $this->data);
 
         return $this;
     }

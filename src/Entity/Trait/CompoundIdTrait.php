@@ -3,12 +3,17 @@
 namespace App\Entity\Trait;
 
 /**
- * Implement an ID which can be decomposed into multiple IDs (according to a separator).
+ * Implement a string ID that can be composed of multiple sub-IDs (according to a separator).
  */
 trait CompoundIdTrait
 {
-    protected const ID_SEPARATOR = '-';
+    protected const COMPOUND_ID_SEPARATOR = '-';
 
+    /**
+     * An identifier which can be:
+     * - simple (e.g. "foo")
+     * - or compound (e.g. "foo-bar-baz").
+     */
     protected string $id;
 
     /**
@@ -30,30 +35,31 @@ trait CompoundIdTrait
     }
 
     /**
-     * Get all the IDs as a flat array.
+     * Get all the sub-IDs as a flat array.
      */
     public function getIds(): array
     {
-        return explode(self::ID_SEPARATOR, $this->getId());
+        return explode(self::COMPOUND_ID_SEPARATOR, $this->getId());
     }
 
     /**
-     * Get all the IDs but the last one.
+     * Get the nth sub-ID if any (null otherwise).
      */
-    public function getIdsAllButLast(): array
+    public function getIdSub(int $index): ?string
     {
-        $ids = $this->getIds();
-
-        array_pop($ids);
-
-        return $ids;
+        return $this->getIds()[$index] ?? null;
     }
 
     /**
-     * Get the last ID.
+     * Extract a slice of the compound ID.
+     * Return null if the offset is out of range.
+     *
+     * @see \array_slice() for the parameters
      */
-    public function getIdLast(): string
+    public function getIdSlice(int $offset, ?int $length = null): ?string
     {
-        return $this->getIds()[count($this->getIds()) - 1];
+        $slice = array_slice($this->getIds(), $offset, $length);
+
+        return $slice ? implode(self::COMPOUND_ID_SEPARATOR, $slice) : null;
     }
 }

@@ -16,4 +16,10 @@
         height: $height-print;
         font-size: 9px;
     }
+
+    main.page > & {
+        width: $width-print;
+        height: $height-print;
+        font-size: 9px;
+    }
 }
