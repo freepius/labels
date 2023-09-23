@@ -1,4 +1,4 @@
-{% set isArray = ingredients.pre ?? ingredients.main ?? ingredients.post ?? false %}
+{% set isArray = ingredients is iterable %}
 {% set ingredients = (isArray ? ingredients : [ingredients])|join(', ') %}
 
 <section class="ingredients {{ ingredients|length > 60 ? 'long' }}">

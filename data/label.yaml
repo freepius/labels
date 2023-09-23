@@ -2,32 +2,33 @@ terrine:
   title: Terrine de Chevreau
   weight: 180g
   ingredients:
-    pre: viande 100% chevreau
-    post: œuf, sel, poivre, agar-agar
+    1: viande 100% chevreau
+    2: ~
+    3: œuf, sel, poivre, agar-agar
 
 terrine-nature:
   ingredients:
-    main: origan
+    2: origan
 
 terrine-foie:
   ingredients:
-    main: foie principalement (30%), persil, ail, cognac
+    2: foie principalement (30%), persil, ail, cognac
 
 terrine-citron-olives:
   subTitle: Citron confit & olives vertes
   ingredients:
-    main: citron confit (5%), olives vertes (5%)
+    2: citron confit (5%), olives vertes (5%)
 
 terrine-poivre-vert:
   subTitle: Poivre vert
   ingredients:
-    main: poivre vert (2%), échalotes, cognac
+    2: poivre vert (2%), échalotes, cognac
 
 terrine-abricots-amandes:
   subTitle: Abricots & amandes
   ingredients:
-    main: abricots secs (5%), amandes (5%)
-    post: sel, poivre, agar-agar
+    2: abricots secs (5%), amandes (5%)
+    3: sel, poivre, agar-agar
 
 rillettes:
   parent: terrine
