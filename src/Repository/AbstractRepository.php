@@ -23,6 +23,11 @@ abstract class AbstractRepository implements RepositoryInterface
     protected Finder $finder;
 
     /**
+     * The factory instance allowing to create objects.
+     */
+    protected ?ObjectFactoryInterface $factory = null;
+
+    /**
      * @param string                $dataPath   Path to the data directory.
      * @param string|string[]|null  $dataFiles  Data file name(s) where objects are stored.
      *                              If not provided, a default value is guessed.
@@ -66,14 +71,12 @@ abstract class AbstractRepository implements RepositoryInterface
      */
     protected function getFactory(): ObjectFactoryInterface
     {
-        static $factory = null;
-
-        if (null === $factory) {
+        if (null === $this->factory) {
             $class = $this->getFactoryFQCN();
-            $factory = new $class($this);
+            $this->factory = new $class($this);
         }
 
-        return $factory;
+        return $this->factory;
     }
 
     /**
