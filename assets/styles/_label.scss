@@ -1,0 +1,29 @@
+@import 'label/container';
+
+.label {
+    $color-blue: #6288c0;
+    $color-orange: #cf5b37;
+    $width-screen: 1000px;
+
+    @import 'label/element/ingredients';
+    @import 'label/format/5of2';
+    @import 'label/three-parts-rectangle';
+
+    width: $width-screen;
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+
+    header, main {
+        text-align: center;
+
+        h1, h2 {
+            font-family: 'Amatic SC', cursive;
+            font-weight: 700;
+        }
+
+        h1 {
+            color: $color-orange;
+            @include text-border(1);
+        }
+    }
+}

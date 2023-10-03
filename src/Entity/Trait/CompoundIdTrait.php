@@ -45,9 +45,17 @@ trait CompoundIdTrait
     /**
      * Get the nth sub-ID if any (null otherwise).
      */
-    public function getIdSub(int $index): ?string
+    public function getIdSub(int $nth): ?string
     {
-        return $this->getIds()[$index] ?? null;
+        return $this->getIds()[$nth] ?? null;
+    }
+
+    /**
+     * Determine if the nth sub-ID exists.
+     */
+    public function hasIdSub(int $nth): bool
+    {
+        return isset($this->getIds()[$nth]);
     }
 
     /**

@@ -1,14 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{# le bloc head parent n'existe pas => @todo #}
-{# {% block head %}
-    <link rel="stylesheet" href="{{ asset('css/#{label.0}.css') }}">
-{% endblock %} #}
-
 {% block body_class %}container-label{% endblock %}
 
 {% block body %}
-    <nav>
+    <!-- The label itself -->
+    {{ include(label.templateName, {label}, with_context = false, sandboxed = true) }}
+
+    <!-- Menu to navigate through the available labels -->
+    <nav id="labels">
+        <h1>{{ 'Labels'|trans }}</h1>
         <ul>
             {% for label in labels %}
                 <li>
@@ -18,5 +18,15 @@
         </ul>
     </nav>
 
-    {{ include(label.templateName, sandboxed = true) }}
+    <!-- Menu to print the current label on a page -->
+    <nav id="pages">
+        <h1>{{ 'Print on'|trans }}</h1>
+        <ul>
+            {% for page in label.printableOn %}
+                <li>
+                    <a href="/page/{{ page }}/{{ label.id }}">{{ page }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>
 {% endblock %}

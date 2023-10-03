@@ -22,6 +22,14 @@ trait DataTrait
     }
 
     /**
+     * Get all data.
+     */
+    public function getData(): array
+    {
+        return $this->data;
+    }
+
+    /**
      * Merge the given data with the existing one.
      */
     public function mergeData(array $data): self
@@ -32,26 +40,61 @@ trait DataTrait
     }
 
     /**
-     * Get all data.
+     * Set a data by its name.
      */
-    public function getData(): array
+    public function setDataValue(string $name, mixed $value): self
     {
-        return $this->data;
+        $this->data[$name] = $value;
+
+        return $this;
     }
 
     /**
      * Get a data by its name.
      */
-    public function __get(string $name): mixed
+    public function getDataValue(string $name, mixed $default = null): mixed
     {
-        return $this->data[$name] ?? null;
+        return $this->data[$name] ?? $default;
     }
 
     /**
-     * Test if a data exists by its name.
+     * Determines if a data exists by its name.
+     */
+    public function hasDataValue(string $name): bool
+    {
+        return isset($this->data[$name]);
+    }
+
+    /**
+     * Get a data through a getter method or directly.
+     */
+    public function __get(string $name): mixed
+    {
+        return method_exists($this, $method = 'get' . ucfirst($name))
+            ? $this->$method()
+            : $this->getDataValue($name)
+        ;
+    }
+
+    /**
+     * Set a data through a setter method or directly.
+     */
+    public function __set(string $name, mixed $value): void
+    {
+        method_exists($this, $method = 'set' . ucfirst($name))
+            ? $this->$method($value)
+            : $this->setDataValue($name, $value)
+        ;
+    }
+
+    /**
+     * Test if a data exists through a 'has' method or directly.
      */
     public function __isset(string $name): bool
     {
-        return isset($this->data[$name]);
+        return method_exists($this, $method = 'has' . ucfirst($name))
+            ? $this->$method()
+            : $this->hasDataValue($name)
+        ;
     }
 }

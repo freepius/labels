@@ -15,18 +15,13 @@ class LabelFactory implements ObjectFactoryInterface
     {
         $label = new Label($id, $data);
 
-        /**
-         * Merge the label data with an eventual parent one
-         * (the parent ID is the first ID part).
-         */
+        // Merge the label data with that of a possible parent.
         if ($parentId = $label->getParentId()) {
             $parent = $this->repository->find($parentId);
 
-            if (null === $parent) {
-                throw new \RuntimeException(sprintf('Parent label "%s" of "%s" not found.', $parentId, $id));
+            if (null !== $parent) {
+                $label->mergeData($parent->getData());
             }
-
-            $label->mergeData($parent->getData());
         }
 
         return $label;

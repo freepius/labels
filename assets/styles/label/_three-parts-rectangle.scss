@@ -1,50 +1,51 @@
-article.terrine {
+&.three-parts-rectangle {
     position: relative;
     display: grid;
     grid-template-columns: 38% 50% 10%;
     column-gap: 1%;
 
-    > header, > main {
-        text-align: center;
-
-        > h1 {
-            color: var(--orange);
-            @include text-border(1);
-        }
-    }
-
-    > header {
+    /**
+     * Contain the organization logo, title and slogan
+     */
+    header {
         display: grid;
         grid-template-rows:  90% 10%;
 
-        > h1 {
+        // title + logo as background image
+        h1 {
             background: no-repeat center / contain;
             display: grid;
             align-content: center;
             font-size: 3.2em;
         }
 
-        > h2 {
+        // slogan
+        h2 {
             font-size: 1.4em;
             -webkit-text-stroke: 1px;
             transform: scaleY(1.25);
         }
     }
 
-    > main {
+    /**
+     * Contain the item name and description.
+     */
+    main {
         display: grid;
         align-items: center;
         height: 95%;
 
-        > h1 {
+        // name
+        h1 {
             font-size: 6em;
             letter-spacing: -0.02em;
             line-height: 0.9em;
         }
 
-        > h2 {
+        // description
+        h2 {
             align-self: baseline;
-            background-color: var(--blue);
+            background-color: $color-blue;
             color: white;
             font-size: 3em;
 
@@ -54,31 +55,30 @@ article.terrine {
         }
     }
 
-    > aside {
+    /**
+     * Contain organization and/or item aside information: address, ingredients, weight, etc.
+     */
+    aside {
         display: flex;
         justify-content: end;
         overflow: hidden;
         height: 87%;
-        padding: 0.2em;
+        padding: $space-sm;
         font-size: 0.85em;
 
-        > .address,
-        > .ingredients {
+        .address,
+        .ingredients {
             writing-mode: vertical-rl;
         }
 
-        > .address {
+        .address {
             margin-right: 0.3em;
         }
 
-        > .ingredients.long {
-            font-size: 0.9em;
-        }
-
-        > .weight {
+        .weight {
             position: absolute;
-            bottom: 0.2em;
-            right: 0.2em;
+            bottom: $space-sm;
+            right: $space-sm;
         }
     }
 }

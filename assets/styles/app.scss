@@ -2,45 +2,11 @@
 @import url('https://fonts.googleapis.com/css?family=Amatic+SC');
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
+@import 'variables';
 @import 'mixins';
-@import 'label/element/ingredients';
-@import 'label/format';
-@import 'label/terrine';
 
-:root {
-    --blue: #6288c0;
-    --orange: #cf5b37;
-}
+@import 'screen';
+@import 'print';
 
-body {
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
-}
-
-header, main {
-    h1, h2 {
-        font-family: 'Amatic SC', cursive;
-        font-weight: 700;
-    }
-}
-
-body.container-label {
-    @media screen {
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    > nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-    }
-}
-
-article {
-    @media screen {
-        border: 1px solid black;
-    }
-}
+@import 'label';
+@import 'page';

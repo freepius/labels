@@ -1,4 +1,14 @@
+three-parts-rectangle-5of2:
+  template: three-parts
+  cssClasses:
+    - three-parts-rectangle
+    - format-5of2
+  printableOn:
+    - A4-2x7
+    - avery-rectangle-2x6
+
 terrine:
+  parent: three-parts-rectangle-5of2
   title: Terrine de Chevreau
   weight: 180g
   ingredients:

@@ -1,4 +1,4 @@
-<article class="{{ label.cssClasses }} format-180g">
+<article class="{{ label.cssClasses }}">
     <header>
         <h1 style="background-image: url({{ asset(org.logo.src) }});">
             {{ org.title }}
@@ -10,7 +10,7 @@
     <main>
         <h1>{{ label.title }}</h1>
 
-        {% if label.hasSubTitle %}
+        {% if label.subTitle %}
             <h2 {% if label.subTitle|length > 15 %}class="long"{% endif %}>
                 {{ label.subTitle }}
             </h2>

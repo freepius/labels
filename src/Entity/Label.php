@@ -13,25 +13,16 @@ class Label
     }
 
     /**
-     * Determines if the label has a sub-title
+     * Get the sub-title if any
      * (either an explicit one or a slice of the compound ID).
+     *
+     * To have a sub-title, the compound ID must have at least 2 parts
+     * (first one is the parent ID, other ones form the sub-title).
      */
-    public function hasSubTitle(): bool
+    public function getSubTitle(): ?string
     {
-        // To have a sub-title, the compound ID must have at least 2 parts
-        // (first one is the parent ID, other ones form the sub-title).
-        return (bool) ($this->subTitle ?? $this->getIdSub(1));
-    }
-
-    /**
-     * Get the sub-title if any.
-     */
-    public function getSubTitle(): string
-    {
-        return $this->hasSubTitle()
-            ? $this->subTitle ?? $this->getIdSlice(1)
-            : ''
-        ;
+        return $this->getDataValue('subTitle')
+            ?? ($this->hasIdSub(1) ? $this->getIdSlice(1) : null);
     }
 
     /**
@@ -40,7 +31,7 @@ class Label
      */
     public function getParentId(): ?string
     {
-        return $this->parent ?? ($this->getIdSub(1) ? $this->getIdSub(0) : null);
+        return $this->parent ?? ($this->hasIdSub(1) ? $this->getIdSub(0) : null);
     }
 
     /**
@@ -59,16 +50,16 @@ class Label
      */
     public function getCssClasses(): string
     {
-        $default = array_unique([
+        $default = fn () => array_unique([
             $this->getParentId(),
+            $this->id,
             $this->getIdSlice(0, 1),
             $this->getIdSlice(1),
-            $this->id,
         ]);
 
         return sprintf(
             'label %s',
-            implode(' ', $this->cssClasses ?? $default)
+            implode(' ', $this->getDataValue('cssClasses', $default()))
         );
     }
 }

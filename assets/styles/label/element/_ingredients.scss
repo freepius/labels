@@ -6,4 +6,8 @@
     h1:after {
         content: ' :';
     }
+
+    &.long {
+        font-size: 0.9em;
+    }
 }

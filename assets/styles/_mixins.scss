@@ -1,3 +1,6 @@
+/**
+ * Display a border of a certain thickness and color around a text.
+ */
 @mixin text-border($thickness, $color: #000) {
     $shadows: ();
 

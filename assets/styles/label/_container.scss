@@ -1,0 +1,19 @@
+body.container-label {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    > nav {
+        position: fixed;
+        top: 1em;
+
+        &#labels {
+            left: 1em;
+        }
+
+        &#pages {
+            right: 1em;
+        }
+    }
+}

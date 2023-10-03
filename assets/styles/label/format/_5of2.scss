@@ -1,0 +1,7 @@
+&.format-5of2 {
+    $ratio: 2.5;
+
+    @media screen {
+        height: calc($width-screen / $ratio);
+    }
+}
