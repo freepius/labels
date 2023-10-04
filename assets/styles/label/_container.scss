@@ -1,18 +1,12 @@
 body.container-label {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @media screen {
+        height: 100vh;
 
-    > nav {
-        position: fixed;
-        top: 1em;
-
-        &#labels {
+        > nav#labels {
             left: 1em;
         }
 
-        &#pages {
+        > nav#pages {
             right: 1em;
         }
     }

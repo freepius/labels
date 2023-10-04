@@ -1,0 +1,7 @@
+@media print {
+    body {
+        > nav {
+            display: none;
+        }
+    }
+}

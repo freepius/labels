@@ -1,0 +1,12 @@
+&.A4-2x7 {
+    @include size-page-a4;
+    @include grid(2, 7, true);
+
+    > .label {
+        --label-size-width: calc(10cm);
+
+        // Make sure the 2 columns are glued together.
+        &:nth-child(2n - 1) { justify-self: end; }
+        &:nth-child(2n)     { justify-self: start; }
+    }
+}

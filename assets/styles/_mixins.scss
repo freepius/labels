@@ -1,4 +1,41 @@
 /**
+ * Generate a grid with a certain number of columns and rows,
+ * and optionally whose elements have borders.
+ */
+@mixin grid($cols, $rows, $with-borders: false) {
+    grid-template-columns: repeat($cols, 1fr);
+    grid-template-rows: repeat($rows, 1fr);
+
+    @if $with-borders {
+        @include grid-elements-with-borders($cols, $rows);
+    }
+}
+
+/**
+ * Add borders to the elements of a grid.
+ */
+@mixin grid-elements-with-borders($cols, $rows) {
+    $num-elements: $cols * $rows;
+
+    > * {
+        border-top: $border-print;
+        border-left: $border-print;
+
+        // Add a right border to the last column.
+        &:nth-child(#{$cols}n) {
+            border-right: $border-print;
+        }
+
+        // Add a bottom border to the last row.
+        @for $x from 0 through $cols - 1 {
+            &:nth-child(#{$num-elements - $x}) {
+                border-bottom: $border-print;
+            }
+        }
+    }
+}
+
+/**
  * Display a border of a certain thickness and color around a text.
  */
 @mixin text-border($thickness, $color: #000) {
@@ -13,4 +50,29 @@
     }
 
     text-shadow: $shadows;
+}
+
+/**
+ * Set the size of an element with optional padding.
+ */
+@mixin size-with-padding(
+    $width, $height,
+    $padding: 0,
+    $top: $padding, $bottom: $padding,
+    $left: $padding, $right: $padding
+) {
+    width: calc(#{$width} - #{$left} - #{$right});
+    height: calc(#{$height} - #{$top} - #{$bottom});
+    padding: #{$top} #{$right} #{$bottom} #{$left};
+}
+
+/**
+ * A4 page with optional padding.
+ */
+@mixin size-page-a4(
+    $padding: 0.5cm,
+    $top: $padding, $bottom: 1cm,
+    $left: $padding, $right: $padding
+) {
+    @include size-with-padding(21cm, 29.7cm, $padding, $top, $bottom, $left, $right);
 }

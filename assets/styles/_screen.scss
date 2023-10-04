@@ -1,9 +1,16 @@
 @media screen {
     body {
-        padding: $space-lg;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         > .label, > .page {
-            border: 1px solid black;
+            border: $border-container;
+        }
+
+        > nav {
+            position: fixed;
+            top: $space-lg;
         }
     }
 }

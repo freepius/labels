@@ -1,0 +1,14 @@
+&.avery-rectangle-2x6 {
+    @include size-page-a4(0.4cm, $top: 2cm, $bottom: 2cm);
+    @include grid(2, 6);
+    grid-column-gap: 0.2cm;
+
+    @media screen {
+        background: url('/public/images/page/avery-rectangle-2x6.jpg') no-repeat center center / cover;
+    }
+
+    > .label {
+        --label-size-width: calc(9.9cm);
+        height: 4.2cm;
+    }
+}

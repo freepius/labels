@@ -1,17 +1,23 @@
 @import 'label/container';
 
+:root {
+    --label-size-width: 1000px;
+    --label-font-size-ratio: calc(25 / 1000);
+}
+
 .label {
     $color-blue: #6288c0;
     $color-orange: #cf5b37;
-    $width-screen: 1000px;
 
     @import 'label/element/ingredients';
     @import 'label/format/5of2';
     @import 'label/three-parts-rectangle';
 
-    width: $width-screen;
+    width: var(--label-size-width);
+    height: calc( var(--label-size-width) / var(--label-size-ratio) );
+    font-size: calc( var(--label-size-width) * var(--label-font-size-ratio) );
+
     font-family: 'Roboto', sans-serif;
-    font-size: 25px;
 
     header, main {
         text-align: center;

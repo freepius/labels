@@ -1,0 +1,8 @@
+@import 'page/container';
+
+.page {
+    @import 'page/A4-2x7';
+    @import 'page/avery-rectangle-2x6';
+
+    display: grid;
+}
