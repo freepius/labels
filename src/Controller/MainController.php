@@ -20,6 +20,15 @@ class MainController extends AbstractController
         ]);
     }
 
+    #[Route('/page/{id}')]
+    public function page(Page $page, LabelRepository $labelRepository): Response
+    {
+        return $this->render("main/page.html.twig", [
+            'page' => $page,
+            'labels' => $labelRepository->findAll(),
+        ]);
+    }
+
     #[Route('/page/{page_id}/{label_id}')]
     public function pageLabel(Page $page, Label $label): Response
     {

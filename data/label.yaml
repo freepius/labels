@@ -20,9 +20,10 @@ terrine-nature:
   ingredients:
     2: origan
 
-terrine-foie:
+terrine-foie-olives:
+  subTitle: Foie & olives noires
   ingredients:
-    2: foie principalement (30%), persil, ail, cognac
+    2: (dont foie 30%), olives noires (5%), persil, ail, cognac
 
 terrine-citron-olives:
   subTitle: Citron confit & olives vertes

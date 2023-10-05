@@ -1,3 +1,12 @@
 A4-2x4: {x: 2, y: 4}
 A4-2x7: {x: 2, y: 7}
 avery-rectangle-2x6: {x: 2, y: 6}
+
+terrines-3-each-news:
+  cssClasses:
+    - avery-rectangle-2x6
+  labels:
+    terrine-citron-olives: 3
+    terrine-poivre-vert: 3
+    terrine-foie-olives: 3
+    terrine-abricots-amandes: 3

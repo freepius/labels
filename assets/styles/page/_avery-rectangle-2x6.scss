@@ -1,14 +1,16 @@
 &.avery-rectangle-2x6 {
-    @include size-page-a4(0.4cm, $top: 2cm, $bottom: 2cm);
+    @include size-page-a4($top: 2.2cm, $bottom: 2.2cm, $left: 0.6cm, $right: 0.6cm);
     @include grid(2, 6);
-    grid-column-gap: 0.2cm;
+    grid-column-gap: 0.3cm;
+    align-items: center;
+    justify-items: center;
 
     @media screen {
-        background: url('/public/images/page/avery-rectangle-2x6.jpg') no-repeat center center / cover;
+        background: url('/public/images/page/avery-rectangle-2x6.jpg') no-repeat center center / contain;
     }
 
     > .label {
-        --label-size-width: calc(9.9cm);
-        height: 4.2cm;
+        --label-size-width: calc(9.7cm);
+        height: 4cm;
     }
 }

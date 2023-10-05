@@ -29,7 +29,7 @@
 
         h1 {
             color: $color-orange;
-            @include text-border(1);
+            -webkit-text-stroke: 0.02em black;
         }
     }
 }

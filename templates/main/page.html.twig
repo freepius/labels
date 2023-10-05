@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body_class %}container-page{% endblock %}
+
+{% block body %}
+    <main class="{{ page.cssClasses }}">
+        {% for id, number in page.labels %}
+            {% set label = labels[id] %}
+            {% set label = include(label.templateName, {label}, with_context = false, sandboxed = true) %}
+
+            {% for i in 1..number %}
+                {{ label|raw }}
+            {% endfor %}
+        {% endfor %}
+    </main>
+{% endblock %}

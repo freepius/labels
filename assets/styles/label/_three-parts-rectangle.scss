@@ -22,8 +22,7 @@
         // slogan
         h2 {
             font-size: 1.4em;
-            -webkit-text-stroke: 1px;
-            transform: scaleY(1.25);
+            -webkit-text-stroke: 0.01em;
         }
     }
 
@@ -64,7 +63,7 @@
         overflow: hidden;
         height: 87%;
         padding: $space-sm;
-        font-size: 0.85em;
+        font-size: 0.80em;
 
         .address,
         .ingredients {
