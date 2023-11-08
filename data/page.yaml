@@ -10,3 +10,11 @@ terrines-3-each-news:
     terrine-poivre-vert: 3
     terrine-foie-olives: 3
     terrine-abricots-amandes: 3
+
+plats:
+  cssClasses:
+    - avery-rectangle-2x6
+  labels:
+    blanquette: 4
+    tajine: 4
+    mijote-romarin-moutarde: 4

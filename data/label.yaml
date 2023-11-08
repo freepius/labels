@@ -1,4 +1,13 @@
+default:
+  org:
+    title: les Roves Nomades
+    slogan: Élevage pastoral de chèvres du Rove
+    address: Côtes de Fontbonne, 07270 Nozières
+    logo:
+      src: '/images/logo.png'
+
 three-parts-rectangle-5of2:
+  parent: default
   template: three-parts
   cssClasses:
     - three-parts-rectangle
@@ -45,3 +54,25 @@ rillettes:
   parent: terrine
   title: Rillettes de Chevreau
   ingredients: viande de chevreau, gras de porc, oignons, sel, poivre
+
+plat-cuisine:
+  parent: three-parts-rectangle-5of2
+  weight: 360g
+
+blanquette:
+  parent: plat-cuisine
+  title: Blanquette de chevreau
+  ingredients: viande 100% chevreau, oignons, carottes, vin blanc,
+    crème, herbes aromatiques, sel, poivre, amidon de maïs
+
+tajine:
+  parent: plat-cuisine
+  title: Tajine de chevreau
+  subTitle: pruneaux, raisins, miel, épices
+  ingredients: viande 100% chevreau, oignons, pruneaux, raisins, miel, épices, sel, poivre
+
+mijote-romarin-moutarde:
+  parent: plat-cuisine
+  title: Mijoté de chevreau
+  subTitle: Romarin & Moutarde
+  ingredients: viande 100% chevreau, vin blanc, moutarde (2%), romarin (2%), crème, sel, poivre, amidon de maïs
