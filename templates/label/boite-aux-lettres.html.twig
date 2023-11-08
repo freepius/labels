@@ -1,0 +1,8 @@
+<article class="{{ label.cssClasses }}">
+    <h1>{{ label.number }}</h1>
+    <ul {{ label.names|length > 2 ? 'class="many"' }}>
+        {% for name in label.names %}
+            <li>{{ name }}</li>
+        {% endfor %}
+    </ul>
+</article>

@@ -1,0 +1,18 @@
+boite-aux-lettres: []
+
+boite-gite:
+  parent: boite-aux-lettres
+  number: 529
+  names:
+    - Roze KOORING
+    - Mathieu POISBEAU
+
+boite-ferme:
+  parent: boite-aux-lettres
+  number: 525
+  names:
+    - SCI Ferme du Rif Noir
+    - Sylvain LONDE & Flore BAZIN
+    - Étienne X
+    - Denis Y
+    - & colocs

@@ -55,7 +55,7 @@ abstract class AbstractRepository implements RepositoryInterface
     {
         $name = strtolower($this->getClassName());
 
-        return ["$name.yaml", "$name/*.yaml"];
+        return ["$name.yaml", "$name-*.yaml"];
     }
 
     /**

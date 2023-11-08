@@ -18,3 +18,10 @@ plats:
     blanquette: 4
     tajine: 4
     mijote-romarin-moutarde: 4
+
+boite-aux-lettres:
+  cssClasses:
+    - avery-rectangle-2x6
+  labels:
+    boite-gite: 1
+    boite-ferme: 1

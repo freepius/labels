@@ -1,0 +1,27 @@
+&.boite-aux-lettres {
+    position: relative;
+    display: grid;
+    justify-items: right;
+
+    h1 {
+        position: absolute;
+        bottom: 0.1em;
+        left: 0.1em;
+        font-size: 5em;
+    }
+
+    ul {
+        margin-right: 1em;
+        text-align: right;
+
+        > li {
+            font-size: 4em;
+            display: block;
+            margin-bottom: 0.2em;
+        }
+
+        &.many > li {
+            font-size: 2.5em;
+        }
+    }
+}
