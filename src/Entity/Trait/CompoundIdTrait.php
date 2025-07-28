@@ -7,7 +7,7 @@ namespace App\Entity\Trait;
  */
 trait CompoundIdTrait
 {
-    protected const COMPOUND_ID_SEPARATOR = '-';
+    protected const COMPOUND_ID_SEPARATOR = '_';
 
     /**
      * An identifier which can be:

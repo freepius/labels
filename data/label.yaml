@@ -1,3 +1,8 @@
+v#logo-goat:
+  org:
+    logo:
+      src: '/images/logo-goat.png'
+
 default:
   org:
     title: les Roves Nomades
@@ -5,6 +10,7 @@ default:
     address: 529 chemin des tourettes, 26400 Chabrillan
     logo:
       src: '/images/logo.png'
+  versions: [logo-goat]
 
 three-parts-rectangle-5of2:
   parent: default
@@ -25,15 +31,13 @@ châtaignes:
   ingredients:
     1: châtaignes
 
-châtaignes-crème:
-  parent: châtaignes
+châtaignes_crème:
   title: Crème de Châtaignes
   weight: 400g
   ingredients:
     2: sucre bio
 
-châtaignes-entières:
-  parent: châtaignes
+châtaignes_entières:
   title: Châtaignes entières
   weight: 240g
 
@@ -47,26 +51,26 @@ terrine:
     3: <b>œuf</b>*, sel, poivre*, agar-agar*.
     4: "*agriculture bio, <b>allergènes</b>"
 
-terrine-nature:
+terrine_nature:
   ingredients:
     2: (90%), origan*,
 
-terrine-foie-olives:
+terrine_foie-olives:
   subTitle: Foie & olives noires
   ingredients:
     2: (85% dont foie 30%), olives noires* (5%), persil*, ail*, cognac*,
 
-terrine-citron-olives:
+terrine_citron-olives:
   subTitle: Citron confit & olives vertes
   ingredients:
     2: (80%), citron confit* (5%), olives vertes* (5%),
 
-terrine-poivre-vert:
+terrine_poivre-vert:
   subTitle: Poivre vert
   ingredients:
     2: (85%), poivre vert* (2%), échalotes*, cognac*,
 
-terrine-abricots-amandes:
+terrine_abricots-amandes:
   subTitle: Abricots & amandes
   ingredients:
     2: (80%), abricots secs* (5%), <b>amandes</b>* (5%),
@@ -79,7 +83,7 @@ rillettes:
 
 plat-cuisine:
   parent: three-parts-rectangle-5of2
-  weight: 710g
+  weight: 350g
   versions:
     grand:
       weight: 710g

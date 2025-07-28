@@ -13,14 +13,12 @@ trait VersionedDataTrait
      * Load extra data over the original ones from version IDs.
      *
      * @param array $versions IDs of the versions to load.
-     * @param bool  $strict   If true, throw an exception if a version is not found.
-     *                        If false, skip missing versions.
-     *
+
      * @return array Return an array of the IDs of actually loaded versions.
      *
      * @throws \DomainException If a version is not found and $strict is true.
      */
-    public function loadVersions(array $versions, bool $strict = true): array
+    public function loadVersions(array $versions): array
     {
         $loaded = [];
 
@@ -28,9 +26,6 @@ trait VersionedDataTrait
             $version = $this->versions[$id] ?? null;
 
             if (null === $version) {
-                if ($strict) {
-                    throw new \DomainException("Label \"{$this->getId()}\" has no version \"{$id}\"");
-                }
                 continue;
             }
 

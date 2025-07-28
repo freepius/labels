@@ -20,9 +20,27 @@ class LabelFactory implements ObjectFactoryInterface
             $parent = $this->repository->find($parentId);
 
             if (null !== $parent) {
+                $label->parent = $parentId;
                 $label->mergeData($parent->getData(), false);
             }
         }
+
+        // Copy/fill the versions data when they are defined outside of the label data.
+        $copyedVersions = [];
+        foreach ($label->versions ?? [] as $id => $version) {
+            if (is_int($id) && is_string($version)) {
+                $data = $this->repository->find("v#{$version}")?->getData();
+
+                if (null === $data) {
+                    throw new \DomainException("Version \"{$version}\" not found for label \"{$label->getId()}\"");
+                } else {
+                    $copyedVersions[$version] = $data;
+                }
+            } else {
+                $copyedVersions[$id] = $version;
+            }
+        }
+        $label->versions = $copyedVersions;
 
         return $label;
     }
