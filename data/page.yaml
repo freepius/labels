@@ -11,6 +11,13 @@ terrines-3-each-news:
     terrine-foie-olives: 3
     terrine-abricots-amandes: 3
 
+châtaignes:
+  cssClasses:
+    - avery-rectangle-2x6
+  labels:
+    châtaignes-crème: 8
+    châtaignes-entières: 4
+
 plats:
   cssClasses:
     - avery-rectangle-2x6

@@ -1,6 +1,6 @@
 {% set org = label.org %}
 
-<article class="{{ label.cssClasses }}">
+<article class="{{ label.parentId }} {{ label.id }} {{ label.cssClasses }}">
     <header>
         <h1 style="background-image: url({{ asset(org.logo.src) }});">
             {{ org.title }}

@@ -2,7 +2,7 @@ default:
   org:
     title: les Roves Nomades
     slogan: Élevage pastoral de chèvres du Rove
-    address: Côtes de Fontbonne, 07270 Nozières
+    address: 529 chemin des tourettes, 26400 Chabrillan
     logo:
       src: '/images/logo.png'
 
@@ -16,63 +16,90 @@ three-parts-rectangle-5of2:
     - A4-2x7
     - avery-rectangle-2x6
 
+châtaignes:
+  org:
+    logo:
+      src: '/images/logo-châtaigne.png'
+  parent: three-parts-rectangle-5of2
+  subTitle: d'Ardèche
+  ingredients:
+    1: châtaignes
+
+châtaignes-crème:
+  parent: châtaignes
+  title: Crème de Châtaignes
+  weight: 400g
+  ingredients:
+    2: sucre bio
+
+châtaignes-entières:
+  parent: châtaignes
+  title: Châtaignes entières
+  weight: 240g
+
 terrine:
   parent: three-parts-rectangle-5of2
   title: Terrine de Chevreau
   weight: 180g
   ingredients:
-    1: viande 100% chevreau
+    1: viande de chevreaux élevés à la ferme
     2: ~
-    3: œuf, sel, poivre, agar-agar
+    3: <b>œuf</b>*, sel, poivre*, agar-agar*.
+    4: "*agriculture bio, <b>allergènes</b>"
 
 terrine-nature:
   ingredients:
-    2: origan
+    2: (90%), origan*,
 
 terrine-foie-olives:
   subTitle: Foie & olives noires
   ingredients:
-    2: (dont foie 30%), olives noires (5%), persil, ail, cognac
+    2: (85% dont foie 30%), olives noires* (5%), persil*, ail*, cognac*,
 
 terrine-citron-olives:
   subTitle: Citron confit & olives vertes
   ingredients:
-    2: citron confit (5%), olives vertes (5%)
+    2: (80%), citron confit* (5%), olives vertes* (5%),
 
 terrine-poivre-vert:
   subTitle: Poivre vert
   ingredients:
-    2: poivre vert (2%), échalotes, cognac
+    2: (85%), poivre vert* (2%), échalotes*, cognac*,
 
 terrine-abricots-amandes:
   subTitle: Abricots & amandes
   ingredients:
-    2: abricots secs (5%), amandes (5%)
-    3: sel, poivre, agar-agar
+    2: (80%), abricots secs* (5%), <b>amandes</b>* (5%),
+    3: sel, poivre*, agar-agar*.
 
 rillettes:
   parent: terrine
   title: Rillettes de Chevreau
-  ingredients: viande de chevreau, gras de porc, oignons, sel, poivre
+  ingredients: viande de chevreaux élevés à la ferme (75%), gras de porc* (20%), oignons*, sel, poivre*. *agriculture bio
 
 plat-cuisine:
   parent: three-parts-rectangle-5of2
-  weight: 360g
+  weight: 710g
+  versions:
+    grand:
+      weight: 710g
 
 blanquette:
   parent: plat-cuisine
   title: Blanquette de chevreau
-  ingredients: viande 100% chevreau, oignons, carottes, vin blanc,
-    crème, herbes aromatiques, sel, poivre, amidon de maïs
+  ingredients: viande caprine 60% (élevage à la ferme), oignons*, carottes*, vin blanc* (<b>sulfites</b>),
+    <b>crème</b>*, herbes aromatiques*, sel, poivre*, amidon de maïs*. *agriculture bio, <b>allergènes</b>
 
 tajine:
   parent: plat-cuisine
   title: Tajine de chevreau
   subTitle: pruneaux, raisins, miel, épices
-  ingredients: viande 100% chevreau, oignons, pruneaux, raisins, miel, épices, sel, poivre
+  ingredients: viande caprine 55% (élevage à la ferme), oignons*, pruneaux* (7%), raisins* (7%),
+    miel* (2%), épices*, sel, poivre*. *agriculture bio
 
 mijote-romarin-moutarde:
   parent: plat-cuisine
   title: Mijoté de chevreau
   subTitle: Romarin & Moutarde
-  ingredients: viande 100% chevreau, vin blanc, moutarde (2%), romarin (2%), crème, sel, poivre, amidon de maïs
+  ingredients: viande caprine 60% (élevage à la ferme), vin blanc* (<b>sulfites</b>), <b>moutarde</b>* (2%), romarin* (2%),
+    <b>crème</b>*, sel, poivre*, amidon de maïs*. *agriculture bio, <b>allergènes</b>

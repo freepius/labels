@@ -2,6 +2,14 @@ body.container-label {
     @media screen {
         height: 100vh;
 
+        > .label {
+            transition: transform 0.2s ease;
+
+            &:hover {
+                transform: rotate(-90deg) translateX(-400px);
+            }
+        }
+
         > nav#labels {
             left: 1em;
         }

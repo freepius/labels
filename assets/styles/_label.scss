@@ -13,11 +13,11 @@
     @import 'label/format/5of2';
     @import 'label/boite-aux-lettres';
     @import 'label/three-parts-rectangle';
+    @import 'label/châtaignes';
 
     width: var(--label-size-width);
     height: calc( var(--label-size-width) / var(--label-size-ratio) );
     font-size: calc( var(--label-size-width) * var(--label-font-size-ratio) );
-
     font-family: 'Roboto', sans-serif;
 
     header, main {
