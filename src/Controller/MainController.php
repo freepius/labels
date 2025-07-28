@@ -15,11 +15,12 @@ class MainController extends AbstractController
     #[Route('/label/{id}')]
     public function label(Label $label, LabelRepository $labelRepository, Request $request): Response
     {
-        $label->loadVersions($this->getVersionsQuery($request));
+        $loadedVersions = $label->loadVersions($this->getVersionsQuery($request));
 
         return $this->render("main/label.html.twig", [
             'label' => $label,
             'labels' => $labelRepository->findAll(),
+            'loadedVersions' => $loadedVersions,
         ]);
     }
 

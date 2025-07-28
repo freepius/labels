@@ -16,10 +16,14 @@ trait VersionedDataTrait
      * @param bool  $strict   If true, throw an exception if a version is not found.
      *                        If false, skip missing versions.
      *
+     * @return array Return an array of the IDs of actually loaded versions.
+     *
      * @throws \DomainException If a version is not found and $strict is true.
      */
-    public function loadVersions(array $versions, bool $strict = true): void
+    public function loadVersions(array $versions, bool $strict = true): array
     {
+        $loaded = [];
+
         foreach ($versions as $id) {
             $version = $this->versions[$id] ?? null;
 
@@ -31,6 +35,10 @@ trait VersionedDataTrait
             }
 
             $this->mergeData($version, true);
+
+            $loaded[] = $id;
         }
+
+        return $loaded;
     }
 }

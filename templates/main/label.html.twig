@@ -29,4 +29,19 @@
             {% endfor %}
         </ul>
     </nav>
+
+    <!-- Menu to select the available versions of the current label -->
+    <nav id="versions">
+        <h1>{{ 'Versions'|trans }}</h1>
+        <p>{{ 'Choose the versions to display'|trans }}</p>
+        <ul>
+            {% for version,_ in label.versions %}
+                <li>
+                    <input type="checkbox" id="version-{{ version }}" name="version" value="{{ version }}"
+                        {% if version in loadedVersions %}checked{% endif %}>
+                    <label for="version-{{ version }}">{{ version }}</label>
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>
 {% endblock %}
