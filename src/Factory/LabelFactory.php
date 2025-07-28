@@ -20,7 +20,7 @@ class LabelFactory implements ObjectFactoryInterface
             $parent = $this->repository->find($parentId);
 
             if (null !== $parent) {
-                $label->mergeData($parent->getData());
+                $label->mergeData($parent->getData(), false);
             }
         }
 

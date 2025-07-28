@@ -31,10 +31,19 @@ trait DataTrait
 
     /**
      * Merge the given data with the existing one.
+     *
+     * @param array $data     The data to merge
+     * @param bool $overwrite If true, the given data will overwrite the existing data.
+     *                        If false, the existing data will be preserved and the new data will be appended.
+     * @return self
      */
-    public function mergeData(array $data): self
+    public function mergeData(array $data, bool $overwrite = true): self
     {
-        $this->data = ArrayUtil::mergeRecursiceDistinct($data, $this->data);
+        [$one, $two] = $overwrite
+            ? [$this->data, $data]
+            : [$data, $this->data];
+
+        $this->data = ArrayUtil::mergeRecursiceDistinct($one, $two);
 
         return $this;
     }

@@ -5,7 +5,7 @@ namespace App\Entity;
 class Label
 {
     use Trait\CompoundIdTrait;
-    use Trait\DataTrait;
+    use Trait\VersionedDataTrait;
 
     public function __construct(string $id, array $data)
     {
