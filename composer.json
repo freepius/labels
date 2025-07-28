@@ -1,23 +1,23 @@
 {
     "type": "project",
-    "license": "proprietary",
+    "license": "MIT",
     "minimum-stability": "stable",
     "prefer-stable": true,
     "require": {
-        "php": ">=8.1",
         "ext-ctype": "*",
         "ext-iconv": "*",
-        "symfony/asset": "6.3.*",
-        "symfony/console": "6.3.*",
-        "symfony/dotenv": "6.3.*",
-        "symfony/flex": "^2",
-        "symfony/framework-bundle": "6.3.*",
-        "symfony/runtime": "6.3.*",
-        "symfony/twig-bundle": "6.3.*",
-        "symfony/webpack-encore-bundle": "^2.0",
-        "symfony/yaml": "6.3.*",
-        "twig/extra-bundle": "^2.12|^3.0",
-        "twig/twig": "^2.12|^3.0"
+        "dromyco/loomdb": "@dev",
+        "symfony/asset": "*",
+        "symfony/asset-mapper": "*",
+        "symfony/console": "*",
+        "symfony/dotenv": "*",
+        "symfony/flex": "*",
+        "symfony/framework-bundle": "*",
+        "symfony/runtime": "*",
+        "symfony/twig-bundle": "*",
+        "symfonycasts/sass-bundle": "^0.8.2",
+        "twig/extra-bundle": "*",
+        "twig/twig": "*"
     },
     "config": {
         "allow-plugins": {
@@ -49,7 +49,8 @@
     "scripts": {
         "auto-scripts": {
             "cache:clear": "symfony-cmd",
-            "assets:install %PUBLIC_DIR%": "symfony-cmd"
+            "assets:install %PUBLIC_DIR%": "symfony-cmd",
+            "importmap:install": "symfony-cmd"
         },
         "post-install-cmd": [
             "@auto-scripts"
@@ -64,14 +65,20 @@
     "extra": {
         "symfony": {
             "allow-contrib": false,
-            "require": "6.3.*"
+            "require": "^7"
         }
     },
     "require-dev": {
-        "symfony/debug-bundle": "6.3.*",
-        "symfony/maker-bundle": "^1.51",
-        "symfony/stopwatch": "6.3.*",
-        "symfony/var-dumper": "6.3.*",
-        "symfony/web-profiler-bundle": "6.3.*"
-    }
+        "symfony/debug-bundle": "*",
+        "symfony/maker-bundle": "*",
+        "symfony/stopwatch": "*",
+        "symfony/var-dumper": "*",
+        "symfony/web-profiler-bundle": "*"
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../../dromyco/loomdb"
+        }
+    ]
 }
