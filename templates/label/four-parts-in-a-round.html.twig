@@ -1,0 +1,66 @@
+{% set org = label.org %}
+
+<article class="{{ label.parentId }} {{ label.id }} four-parts-in-a-round {{ label.cssClasses }}">
+    <!-- Organization title and short address -->
+    <header>
+        <!-- The title follows a curved path -->
+        <svg viewBox="0 0 600 600">
+            <defs>
+                <path
+                    id="header-arc"
+                    d="M 0,300 A 300,300 0 0,1 600,300"
+                />
+            </defs>
+            <text class="h1" dy="55">
+                <textPath href="#header-arc" startOffset="50%" text-anchor="middle">
+                    {{ org.title }}
+                </textPath>
+            </text>
+        </svg>
+        <h2>{{ org.shortAdress }}</h2>
+    </header>
+
+    <!-- The label title over the organization logo -->
+    <main style="background-image: url({{ asset(org.logo.src) }});">
+        <h1 {% if label.title|length < 7 %}class="short"{% endif %}>
+            {{ label.title }}
+        </h1>
+    </main>
+
+    <!-- Label subtitle or organization info, + organic labels if any -->
+    <footer>
+        {% if label.subTitle %}
+            <h2 id="label-subtitle" {% if label.subTitle|length > 20 %}class="long"{% endif %}>
+                {{ label.subTitle }}
+            </h2>
+        {% else %}
+            <h2 id="org-website">{{ org.website }}</h2>
+            <h3 id="org-slogan">{{ org.slogan }}</h3>
+        {% endif %}
+
+        {{ include(
+            'label/element/organic-labels.html.twig',
+            {organicLabels: label.organicLabels ?? []},
+            with_context = false
+        ) }}
+    </footer>
+
+    <!-- Various information about organization and/or label, following a curved path  -->
+    <aside>
+        <svg viewBox="0 0 600 600" style="z-index:1000">
+            <defs>
+                <path
+                    id="extra-info-arc"
+                    d="M 495,100 A 280,280 0 1,1 105,100"
+                />
+            </defs>
+                <text textLength="1000" lengthAdjust="spacing">
+                    <textPath href="#extra-info-arc" startOffset="48%" text-anchor="middle">
+                        {% for  info in label.extraInfo %}
+                            {{ info|raw }}{% if not loop.last %}  &ndash;  {% endif %}
+                        {% endfor %}
+                    </textPath>
+                </text>
+        </svg>
+    </aside>
+</article>

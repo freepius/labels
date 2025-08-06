@@ -1,0 +1,114 @@
+&.four-parts-in-a-round {
+    --label-size-width: 600px;
+
+    position: relative;
+    overflow: hidden;
+
+    aspect-ratio: 1; // aspect ratio for a circle
+    border-radius: 50%;
+
+    /**
+     * The round is divided in 3 main parts: header, main and footer.
+     * The 4th one, containing extra info, is organized around the inner circle.
+     */
+    display: grid;
+    grid-template-rows: 20% 63% 17%;
+
+    > * {
+        grid-column: 1 / -1;
+        width: 100%;
+    }
+
+    svg {
+        font-size: 1.1rem;
+    }
+
+    /**
+     * Contain the organization title and short address.
+     */
+    header {
+        position: relative;
+
+        // title
+        svg .h1 {
+            font-size: 4em;
+            letter-spacing: 0.05em
+        }
+
+        // slogan
+        h2 {
+            width: 100%;
+            position: absolute;
+            top: 2.5em;
+
+            font-size: 2em;
+            opacity: 0.5;
+        }
+    }
+
+    /**
+     * Contain label title over organization logo.
+     */
+    main {
+        margin-top: -1.5em;
+
+        // org logo as background image
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        // Center the title in the middle of this background logo
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        // title
+        h1 {
+            font-size: 9em;
+
+            &.short {
+                font-size: 11.5em;
+            }
+        }
+    }
+
+    /**
+     * Contain label subtitle OR organization info,
+     * AND organic labels if any.
+     */
+    footer {
+        font-size: 1.5em;
+
+        h2 {
+            margin-top: -0.2em;
+        }
+
+        h2#label-subtitle {
+            font-size: 2em;
+
+            &.long {
+                font-size: 1.5em;
+            }
+        }
+
+        h2#org-website {
+            font-size: 1.5em;
+            opacity: 0.5;
+        }
+
+        .organic-label img {
+            height: 2em;
+        }
+    }
+
+    /**
+     * Contain various information about organization and/or label.
+     */
+    aside {
+        position: absolute;
+
+        text {
+            font-size: 1.2em;
+        }
+    }
+}

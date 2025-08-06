@@ -13,6 +13,7 @@
     @import 'label/format/5of2';
     @import 'label/boite-aux-lettres';
     @import 'label/three-parts-rectangle';
+    @import 'label/four-parts-in-a-round';
     @import 'label/châtaignes';
 
     width: var(--label-size-width);
@@ -20,12 +21,11 @@
     font-size: calc( var(--label-size-width) * var(--label-font-size-ratio) );
     font-family: 'Roboto', sans-serif;
 
-    header, main {
+    header, main, footer {
         text-align: center;
 
-        h1, h2 {
+        h1, svg .h1, h2, h3 {
             font-family: 'Amatic SC', cursive;
-            font-weight: 700;
         }
 
         h1 {

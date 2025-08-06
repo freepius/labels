@@ -27,7 +27,7 @@
     }
 
     /**
-     * Contain the item name and description.
+     * Contain the label title and description.
      */
     main {
         display: grid;
@@ -55,7 +55,7 @@
     }
 
     /**
-     * Contain organization and/or item aside information: address, ingredients, weight, etc.
+     * Contain organization and/or label aside information: address, ingredients, weight, etc.
      */
     aside {
         display: flex;

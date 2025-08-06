@@ -8,8 +8,11 @@ default:
     title: les Roves Nomades
     slogan: Élevage pastoral de chèvres du Rove
     address: 529 chemin des tourettes, 26400 Chabrillan
+    shortAdress: Chabrillan, Drôme
+    website: roves-nomades.fr
     logo:
       src: '/images/logo.png'
+  #organicLabels: [bio]
   versions: [logo-goat]
 
 three-parts-rectangle-5of2:
@@ -83,7 +86,7 @@ rillettes:
 
 plat-cuisine:
   parent: three-parts-rectangle-5of2
-  weight: 350g
+  weight: 360g
   versions:
     grand:
       weight: 710g
@@ -107,3 +110,27 @@ mijote-romarin-moutarde:
   subTitle: Romarin & Moutarde
   ingredients: viande caprine 60% (élevage à la ferme), vin blanc* (<b>sulfites</b>), <b>moutarde</b>* (2%), romarin* (2%),
     <b>crème</b>*, sel, poivre*, amidon de maïs*. *agriculture bio, <b>allergènes</b>
+
+saucisses-herbes:
+  parent: three-parts-rectangle-5of2
+  title: Saucisses aux herbes
+  subTitle: viande de chevreaux
+  ingredients: viande de chevreaux élevés à la ferme (80%), boyau de mouton*,
+    gras de porc*, persil*, origan*, thym*, sel, poivre*. *agriculture bio
+  weight: 300g
+
+four-parts-in-a-round:
+  parent: default
+  template: four-parts-in-a-round
+  printableOn:
+    - avery-round-80mm-2x3
+
+glace-top-in-a-round:
+  parent: four-parts-in-a-round
+  title: glace
+  subTitle: au lait de chèvres
+  extraInfo:
+    - Sortir 10 min. avant de déguster
+    - À conserver à -18 °C
+    - Ne pas recongeler un produit décongelé
+    - 'DDM : <tspan dx="75">'

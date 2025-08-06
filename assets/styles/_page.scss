@@ -3,6 +3,7 @@
 .page {
     @import 'page/A4-2x7';
     @import 'page/avery-rectangle-2x6';
+    @import 'page/avery-round-80mm-2x3';
 
     display: grid;
 }
