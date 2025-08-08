@@ -27,21 +27,21 @@
     }
 
     /**
-     * Contain the label title and description.
+     * Contain the label title and subtitle.
      */
     main {
         display: grid;
         align-items: center;
         height: 95%;
 
-        // name
+        // title
         h1 {
             font-size: 6em;
             letter-spacing: -0.02em;
             line-height: 0.9em;
         }
 
-        // description
+        // subtitle
         h2 {
             align-self: baseline;
             background-color: $color-blue;

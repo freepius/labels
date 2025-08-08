@@ -12,9 +12,10 @@
     @import 'label/element/ingredients';
     @import 'label/format/5of2';
     @import 'label/boite-aux-lettres';
-    @import 'label/three-parts-rectangle';
-    @import 'label/four-parts-in-a-round';
     @import 'label/châtaignes';
+    @import 'label/four-parts-in-a-round';
+    @import 'label/icecream';
+    @import 'label/three-parts-rectangle';
 
     width: var(--label-size-width);
     height: calc( var(--label-size-width) / var(--label-size-ratio) );

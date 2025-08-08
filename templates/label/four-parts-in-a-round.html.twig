@@ -11,7 +11,7 @@
                     d="M 0,300 A 300,300 0 0,1 600,300"
                 />
             </defs>
-            <text class="h1" dy="55">
+            <text class="h1" dy="60">
                 <textPath href="#header-arc" startOffset="50%" text-anchor="middle">
                     {{ org.title }}
                 </textPath>
@@ -54,7 +54,7 @@
                     d="M 495,100 A 280,280 0 1,1 105,100"
                 />
             </defs>
-                <text textLength="1000" lengthAdjust="spacing">
+                <text textLength="1000" lengthAdjust="spacing"  dy="10">
                     <textPath href="#extra-info-arc" startOffset="48%" text-anchor="middle">
                         {% for  info in label.extraInfo %}
                             {{ info|raw }}{% if not loop.last %}  &ndash;  {% endif %}

@@ -1,12 +1,12 @@
 &.avery-round-80mm-2x3 {
     // TODO: set the propper size for this label
-    @include size-page-a4($top: 2.2cm, $bottom: 2.2cm, $left: 0.6cm, $right: 0.55cm);
+    @include size-page-a4($top: 1.85cm, $bottom: 1.85cm, $left: 2cm, $right: 2cm);
     @include grid(2, 3);
-    grid-column-gap: 0.3cm;
+    gap: 1cm;
     align-items: center;
     justify-items: center;
 
     > .label {
-        --label-size-width: calc(80mm);
+        --label-size-width: 80mm;
     }
 }

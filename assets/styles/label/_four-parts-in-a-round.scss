@@ -1,10 +1,10 @@
 &.four-parts-in-a-round {
     --label-size-width: 600px;
+    --label-size-ratio: 1;
 
     position: relative;
     overflow: hidden;
 
-    aspect-ratio: 1; // aspect ratio for a circle
     border-radius: 50%;
 
     /**
