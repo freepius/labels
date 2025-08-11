@@ -1,0 +1,5 @@
+{% extends "label/three-parts.html.twig" %}
+
+{# Extract the taste from the label ID, after "icecream_" prefix #}
+{% set taste = label.idSub(1) %}
+{% set headerImg = 'images/icecream/' ~ taste ~ '-goat.png' %}

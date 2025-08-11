@@ -10,11 +10,16 @@
     $color-orange: #cf5b37;
 
     @import 'label/element/ingredients';
+
     @import 'label/format/5of2';
+    @import 'label/format/3of2';
+
     @import 'label/boite-aux-lettres';
     @import 'label/châtaignes';
     @import 'label/four-parts-in-a-round';
-    @import 'label/icecream';
+    @import 'label/icecream-main';
+    @import 'label/icecream-small';
+    @import 'label/icecream-specific';
     @import 'label/three-parts-rectangle';
 
     width: var(--label-size-width);

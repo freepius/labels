@@ -131,3 +131,39 @@ glace-top-in-a-round:
     - À conserver à -18 °C
     - Ne pas recongeler un produit décongelé
     - 'DDM : <tspan dx="75">'
+
+icecream:
+  parent: default
+  cssClasses:
+    - format-3of2
+  printableOn:
+    - avery-rectangle-2x4
+  org:
+    title: Glace paysanne
+    slogan: au lait de chèvres du Rove
+  quantity: 480 mL net
+  certifications: [bio]
+  qrcode: "/images/qrcode/icecream-plus.png"
+  ingredients:
+    1: lait de chèvres du Rove* (50%)
+    2: sucre de canne* (30%)
+    3: crème de chèvre* (10%)
+    4: <b>œuf</b>* (5%), stabilisant* (gomme de guar*), arôme naturel* (vanille*).
+    5: "*agriculture bio, <b>allergènes</b>"
+  versions:
+    small:
+      parent: three-parts-rectangle-5of2
+      template: icecream-small
+      qrcode: "/images/qrcode/icecream.png"
+      quantity: 120 mL net
+      org:
+        title: Glace paysanne
+        slogan: au lait de chèvres du Rove
+
+icecream_vanille:
+  title: Vanille
+  subTitle: de Madagascar
+
+icecream_fraise:
+  title: Fraise
+  subTitle: de la Drôme

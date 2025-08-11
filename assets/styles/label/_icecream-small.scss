@@ -1,0 +1,20 @@
+&.three-parts-rectangle[class*="icecream_"] {
+    header h1 {
+        align-content: end;
+    }
+
+    main {
+        height: unset;
+        align-self: end;
+        margin-bottom: $space-lg;
+    }
+
+    main h1 {
+        align-self: end;
+        margin-bottom: $space-sm
+    }
+
+    .quantity-label {
+        display: none;
+    }
+}

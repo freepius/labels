@@ -1,0 +1,106 @@
+&.icecream {
+    position: relative;
+
+    /**
+     * Contain the label title only.
+     */
+    header {
+        margin: $space-md;
+        display: flex;
+        align-items: center;
+
+        h1 {
+            background-image: none !important;
+            color: black;
+            font-size: 4em;
+            -webkit-text-stroke: 0;
+        }
+
+        h2 {
+            font-size: 2em;
+            letter-spacing: -0.01em;
+            opacity: 0.8;
+        }
+    }
+
+    /**
+     * Contain the label subtitle and image.
+     */
+    main {
+        margin-top: $space-lg;
+        h1 {
+            font-size: 6em;
+        }
+
+        h2 {
+            font-size: 2em;
+            color: black;
+            opacity: 0.8;
+        }
+
+        img {
+            width: 70%;
+            height: auto;
+            object-fit: contain;
+            object-position: center;
+        }
+    }
+
+    /**
+     * Contain the label certifications and QR code.
+    */
+    footer {
+        position: absolute;
+        bottom: 0;
+
+        display: flex;
+        flex-direction: column;
+        padding: $space-md;
+
+        img.qrcode {
+            height: 10em;
+        }
+
+        .certifications {
+            margin-top: $space-sm;
+            text-align: left;
+
+            .certification > img {
+                width: 5em;
+            }
+        }
+    }
+
+    /**
+     * Contain organization and/or label aside information: address, ingredients, quantity, etc.
+     */
+    aside {
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        display: flex;
+        justify-content: end;
+        height: 100%;
+        padding: $space-md;
+        font-size: 0.8em;
+
+        .address,
+        .ingredients {
+            writing-mode: vertical-rl;
+            height: 90%;
+        }
+
+        .address {
+            font-size: 0.9em;
+            margin-right: 0.3em;
+        }
+
+        .quantity {
+            position: absolute;
+            bottom: 0.7em;
+            width: max-content;
+            font-size: 2em;
+        }
+    }
+}

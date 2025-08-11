@@ -1,7 +1,7 @@
 A4-2x4: {x: 2, y: 4}
 A4-2x7: {x: 2, y: 7}
+avery-rectangle-2x4: {x: 2, y: 4}
 avery-rectangle-2x6: {x: 2, y: 6}
-avery-rectangle-2x8: {x: 2, y: 8}
 avery-round-80mm-2x3: {x: 2, y: 3}
 
 terrines-3-each-news:
@@ -24,9 +24,10 @@ plats:
   cssClasses:
     - avery-rectangle-2x6
   labels:
-    blanquette: 4
-    tajine: 4
-    mijote-romarin-moutarde: 4
+    tajine: 6
+    blanquette: 1
+    boite-gite: 1
+    terrine-nature: 4
 
 boite-aux-lettres:
   cssClasses:
