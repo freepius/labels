@@ -43,7 +43,7 @@ trait DataTrait
             ? [$this->data, $data]
             : [$data, $this->data];
 
-        $this->data = ArrayUtil::mergeRecursiceDistinct($one, $two);
+        $this->data = ArrayUtil::mergeRecursiceDistinct($one, $two, static::getDoNotMergeRecursively());
 
         return $this;
     }
@@ -105,5 +105,13 @@ trait DataTrait
             ? $this->$method()
             : $this->hasDataValue($name)
         ;
+    }
+
+    /**
+     * Return the keys whose values should not be merged recursively.
+     */
+    protected static function getDoNotMergeRecursively(): array
+    {
+        return [];
     }
 }

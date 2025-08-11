@@ -12,7 +12,7 @@ trait CompoundIdTrait
     /**
      * An identifier which can be:
      * - simple (e.g. "foo")
-     * - or compound (e.g. "foo-bar-baz").
+     * - or compound (e.g. "foo_bar_baz").
      */
     protected string $id;
 

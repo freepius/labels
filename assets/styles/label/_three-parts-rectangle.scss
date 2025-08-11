@@ -36,7 +36,7 @@
 
         // title
         h1 {
-            font-size: 6em;
+            font-size: 5em;
             letter-spacing: -0.02em;
             line-height: 0.9em;
         }
@@ -55,7 +55,7 @@
     }
 
     /**
-     * Contain organization and/or label aside information: address, ingredients, weight, etc.
+     * Contain organization and/or label aside information: address, ingredients, quantity, etc.
      */
     aside {
         display: flex;
@@ -75,10 +75,35 @@
             margin-right: 0.3em;
         }
 
-        .weight {
+        .quantity {
             position: absolute;
             bottom: $space-sm;
             right: $space-sm;
+
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+    }
+
+    /**
+     * Contain the label certifications, QR code and barcode.
+     */
+    footer {
+        position: absolute;
+        bottom: 0;
+        left: 38%;
+        width: 48%;
+        display: flex;
+        gap: $space-sm;
+	    justify-content: center;
+
+        .certification img {
+            height: 2em;
+        }
+
+        img.qrcode {
+            width: auto;
+            height: 2em;
         }
     }
 }

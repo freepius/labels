@@ -25,22 +25,32 @@ class LabelFactory implements ObjectFactoryInterface
             }
         }
 
-        // Copy/fill the versions data when they are defined outside of the label data.
-        $copyedVersions = [];
-        foreach ($label->versions ?? [] as $id => $version) {
+        if (empty($label->versions)) {
+            // If no versions are defined, we can skip the rest.
+            return $label;
+        }
+
+        // Copy the versions data when they are defined outside of the label data, via an alias (e.g., "v#my-version-id").
+        $versions = [];
+        foreach ($label->versions as $id => $version) {
             if (is_int($id) && is_string($version)) {
                 $data = $this->repository->find("v#{$version}")?->getData();
 
                 if (null === $data) {
                     throw new \DomainException("Version \"{$version}\" not found for label \"{$label->getId()}\"");
                 } else {
-                    $copyedVersions[$version] = $data;
+                    $versions[$version] = $data;
                 }
             } else {
-                $copyedVersions[$id] = $version;
+                $versions[$id] = $version;
             }
         }
-        $label->versions = $copyedVersions;
+
+        // Process the versions through the factory to ensure they are properly initialized.
+        foreach ($versions as $id => $version) {
+            $versions[$id] = $this->createFromArray($id, $version)?->getData();
+        }
+        $label->versions = $versions;
 
         return $label;
     }

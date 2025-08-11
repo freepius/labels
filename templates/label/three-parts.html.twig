@@ -1,8 +1,10 @@
 {% set org = label.org %}
+{% set headerImg = headerImg ?? org.logo ?? null %}
+{% set mainImg = mainImg ?? label.logo ?? null %}
 
 <article class="{{ label.parentId }} {{ label.id }} {{ label.cssClasses }}">
     <header>
-        <h1 style="background-image: url({{ asset(org.logo.src) }});">
+        <h1 {% if headerImg %}style="background-image: url({{ asset(headerImg) }});"{% endif %}>
             {{ org.title }}
         </h1>
 
@@ -10,6 +12,10 @@
     </header>
 
     <main>
+        {% if mainImg %}
+            <img src="{{ asset(mainImg) }}" />
+        {% endif %}
+
         <h1>{{ label.title }}</h1>
 
         {% if label.subTitle %}
@@ -28,6 +34,11 @@
             with_context = false
         ) }}
 
-        <section class="weight">{{ 'Poids net :'|trans }} {{ label.weight }}</section>
+        {{ include('label/element/quantity.html.twig') }}
     </aside>
+
+    <footer>
+        {{ include('label/element/certifications.html.twig') }}
+        {{ include('label/element/qrcode.html.twig') }}
+    </footer>
 </article>

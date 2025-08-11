@@ -14,9 +14,9 @@ trait VersionedDataTrait
      *
      * @param array $versions IDs of the versions to load.
 
-     * @return array Return an array of the IDs of actually loaded versions.
+     * @return array Return the IDs array of actually loaded versions.
      *
-     * @throws \DomainException If a version is not found and $strict is true.
+     * @throws \DomainException If a version is not found and $strict is true. @todo
      */
     public function loadVersions(array $versions): array
     {

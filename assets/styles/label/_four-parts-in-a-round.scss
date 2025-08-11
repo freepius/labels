@@ -74,7 +74,7 @@
 
     /**
      * Contain label subtitle OR organization info,
-     * AND organic labels if any.
+     * AND certifications if any.
      */
     footer {
         font-size: 1.5em;
@@ -83,7 +83,7 @@
             margin-top: -0.2em;
         }
 
-        h2#label-subtitle {
+        h2.label-subtitle {
             font-size: 2em;
 
             &.long {
@@ -91,12 +91,12 @@
             }
         }
 
-        h2#org-website {
+        h2.org-website {
             font-size: 1.5em;
             opacity: 0.5;
         }
 
-        .organic-label img {
+        .certification img {
             height: 2em;
         }
     }

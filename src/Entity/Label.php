@@ -62,4 +62,9 @@ class Label
             implode(' ', $this->getDataValue('cssClasses', $default()))
         );
     }
+
+    protected function getDoNotMergeRecursively(): array
+    {
+        return ['cssClasses', 'printableOn'];
+    }
 }
