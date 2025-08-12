@@ -52,9 +52,7 @@
             </defs>
                 <text textLength="1000" lengthAdjust="spacing"  dy="10">
                     <textPath href="#extra-info-arc" startOffset="48%" text-anchor="middle">
-                        {% for  info in label.extraInfo %}
-                            {{ info|raw }}{% if not loop.last %}  &ndash;  {% endif %}
-                        {% endfor %}
+                        {{ include('label/element/extraInfo.text.twig') }}
                     </textPath>
                 </text>
         </svg>

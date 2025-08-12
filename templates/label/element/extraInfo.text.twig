@@ -1,0 +1,6 @@
+{% set info = label.extraInfo ?? [] %}
+{% set info = info is not iterable ? [info] : info %}
+
+{% for  i in info %}
+    {{ i|raw }}{% if not loop.last %}  &ndash;  {% endif %}
+{% endfor %}

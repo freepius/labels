@@ -1,8 +1,13 @@
 &.three-parts-rectangle {
+    --width-header: 38%;
+    --width-main: 48%;
+    --width-aside: 12%;
+    --column-gap: 1%;
+
     position: relative;
     display: grid;
-    grid-template-columns: 38% 48% 12%;
-    column-gap: 1%;
+    grid-template-columns: var(--width-header) var(--width-main) var(--width-aside);
+    column-gap: var(--column-gap);
 
     /**
      * Contain the organization logo, title and slogan
@@ -59,20 +64,27 @@
      */
     aside {
         display: flex;
+        column-gap: $space-md;
         justify-content: end;
         overflow: hidden;
         height: 90%;
         padding: $space-sm;
         font-size: 0.80em;
 
-        .address,
-        .ingredients {
+        b {
+            font-weight: bold;
+        }
+
+        > :not(.quantity) {
             writing-mode: vertical-rl;
         }
 
-        .address {
+        .extra-info > li {
+            margin-right: $space-md;
+        }
+
+        .extra-info, .address {
             font-size: 0.9em;
-            margin-right: 0.3em;
         }
 
         .quantity {
@@ -91,18 +103,14 @@
     footer {
         position: absolute;
         bottom: 0;
-        left: calc(38% + 1%);
-        width: 48%;
+        left: calc(var(--width-header) + var(--column-gap));
+        width: var(--width-main);
         display: flex;
-        gap: $space-md;
+        column-gap: $space-md;
+        flex-wrap: wrap;
 	    justify-content: center;
 
-        .certification img {
-            height: 2em;
-        }
-
-        img.qrcode, img.barcode {
-            width: auto;
+        img {
             height: 2em;
         }
     }

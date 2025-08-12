@@ -26,14 +26,9 @@
     </main>
 
     <aside>
-        <section class="address">{{ org.address }}</section>
-
-        {{ include(
-            'label/element/ingredients.html.twig',
-            {ingredients: label.ingredients},
-            with_context = false
-        ) }}
-
+        {{ include('label/element/extraInfo.html.twig') }}
+        {{ include('label/element/ingredients.html.twig') }}
+        <section class="address">{{ org.address|raw }}</section>
         {{ include('label/element/quantity.html.twig') }}
     </aside>
 

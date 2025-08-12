@@ -6,7 +6,8 @@ default:
   org:
     title: les Roves Nomades
     slogan: Élevage pastoral de chèvres du Rove
-    address: 529 chemin des tourettes, 26400 Chabrillan
+    address: <b>Les Roves Nomades</b>
+      <br>529 chemin des tourettes, 26400 Chabrillan
     shortAdress: Chabrillan, Drôme
     website: roves-nomades.fr
     logo: '/images/logo.png'
@@ -114,6 +115,9 @@ saucisses-herbes:
   ingredients: viande de chevreaux élevés à la ferme (80%), boyau de mouton*,
     gras de porc*, persil*, origan*, thym*, sel, poivre*. *agriculture bio
   quantity: 300g net
+  barcode: '9588607000148'
+  certifications: [bio]
+  qrcode: "/images/qrcode/icecream.png"
 
 four-parts-in-a-round:
   parent: default
@@ -142,14 +146,16 @@ icecream:
     slogan: au lait de chèvres du Rove
   quantity: 480 mL net
   qrcode: "/images/qrcode/icecream-plus.png"
-  certifications: [bio]
   barcodeOptions: {showDigits: true}
   ingredients:
-    1: lait de chèvres du Rove* (50%)
-    2: sucre de canne* (30%)
-    3: crème de chèvre* (10%)
-    4: <b>œuf</b>* (5%), stabilisant* (gomme de guar*), arôme naturel* (vanille*).
-    5: "*agriculture bio, <b>allergènes</b>"
+    1: ~
+    2: ~
+    3: miel de la Drôme*,
+    4: sucre de betterave*, glucose*,
+    5: <b>jaune d'œuf</b>*
+    6: huile de tournesol*,
+    7: guar*, caroube*,
+    8: "*agriculture bio, <b>allergènes</b>"
   versions:
     small:
       parent: three-parts-rectangle-5of2
@@ -160,6 +166,11 @@ icecream:
       org:
         title: Glace paysanne
         slogan: au lait de chèvres du Rove
+      extraInfo:
+        - Sortir 10 min. avant de déguster
+        - À conserver à -18 °C
+        - Ne pas recongeler un produit décongelé
+        - 'DDM : <tspan dx="75">'
 
 icecream_vanille:
   title: Vanille
@@ -168,3 +179,7 @@ icecream_vanille:
 icecream_fraise:
   title: Fraise
   subTitle: de la Drôme
+  barcode: '9588607000148'
+  ingredients:
+    1: lait de chèvres du Rove* (42%)
+    2: fraise de la Drôme* (25%),

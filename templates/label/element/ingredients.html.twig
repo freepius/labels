@@ -1,3 +1,4 @@
+{% set ingredients = label.ingredients ?? [] %}
 {% set isArray = ingredients is iterable %}
 {% set ingredients = (isArray ? ingredients : [ingredients])|join(' ') %}
 

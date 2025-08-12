@@ -1,10 +1,52 @@
 &.three-parts-rectangle[class*="icecream_"] {
-    header h1 {
-        align-content: end;
+    --width-main: 30%;
+    --width-aside: 30%;
+
+    header {
+        margin-top: $space-lg;
+
+        h1 {
+            align-content: end;
+        }
     }
 
-    main h1 {
-        align-self: end;
-        margin-bottom: $space-sm
+    main {
+        h1 {
+            align-self: end;
+        }
+
+        h2 {
+            background-color: unset;
+            color: black;
+        }
+    }
+
+    aside {
+        border-left: 0.1em solid black;
+        height: calc(100% - 2 * $space-sm);
+
+        .extra-info, .address {
+            font-size: unset;
+        }
+
+        .quantity {
+            left: calc(var(--width-header) + var(--width-main) + 2*var(--column-gap) + $space-sm);
+            right: unset;
+            writing-mode: vertical-rl;
+        }
+    }
+
+    footer {
+        flex-wrap: wrap;
+        bottom: $space-sm;
+
+        img {
+            height: 2.6em;
+        }
+
+        > :nth-child(3) {
+            flex-basis: 100%;
+            margin-bottom: $space-sm;
+        }
     }
 }

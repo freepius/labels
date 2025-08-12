@@ -1,0 +1,10 @@
+{% set info = label.extraInfo ?? [] %}
+{% set info = info is not iterable ? [info] : info %}
+
+{% if info is not empty %}
+    <ul class="extra-info">
+        {% for i in info %}
+            <li>{{ i|raw }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
