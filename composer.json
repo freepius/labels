@@ -7,6 +7,7 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "dromyco/loomdb": "@dev",
+        "picqer/php-barcode-generator": "^3",
         "symfony/asset": "*",
         "symfony/asset-mapper": "*",
         "symfony/console": "*",

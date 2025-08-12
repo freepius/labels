@@ -10,7 +10,6 @@ default:
     shortAdress: Chabrillan, Drôme
     website: roves-nomades.fr
     logo: '/images/logo.png'
-  #certifications: [bio]
   versions: [logo-goat]
 
 three-parts-rectangle-5of2:
@@ -142,8 +141,9 @@ icecream:
     title: Glace paysanne
     slogan: au lait de chèvres du Rove
   quantity: 480 mL net
-  certifications: [bio]
   qrcode: "/images/qrcode/icecream-plus.png"
+  certifications: [bio]
+  barcodeOptions: {showDigits: true}
   ingredients:
     1: lait de chèvres du Rove* (50%)
     2: sucre de canne* (30%)
@@ -155,6 +155,7 @@ icecream:
       parent: three-parts-rectangle-5of2
       template: icecream-small
       qrcode: "/images/qrcode/icecream.png"
+      barcodeOptions: {showDigits: false}
       quantity: 120 mL net
       org:
         title: Glace paysanne

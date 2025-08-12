@@ -1,0 +1,10 @@
+{% if digits %}
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {{ widthFactor * 100 }} {{ height + 10 }}" preserveAspectRatio="xMidYMid meet">
+        <g>{{ svg|raw }}</g>
+        <text x="50%" y="{{ height + 10 }}" font-family="monospace" font-size="12" text-anchor="middle">{{ digits }}</text>
+    </svg>
+{% else %}
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {{ widthFactor * 100 }} {{ height }}" preserveAspectRatio="xMidYMid meet">
+        <g>{{ svg|raw }}</g>
+    </svg>
+{% endif %}

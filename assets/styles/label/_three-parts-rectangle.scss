@@ -91,17 +91,17 @@
     footer {
         position: absolute;
         bottom: 0;
-        left: 38%;
+        left: calc(38% + 1%);
         width: 48%;
         display: flex;
-        gap: $space-sm;
+        gap: $space-md;
 	    justify-content: center;
 
         .certification img {
             height: 2em;
         }
 
-        img.qrcode {
+        img.qrcode, img.barcode {
             width: auto;
             height: 2em;
         }
