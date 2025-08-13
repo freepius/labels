@@ -21,7 +21,7 @@ class Label
      */
     public function getSubTitle(): ?string
     {
-        return $this->getDataValue('subTitle')
+        return $this->getDataValue('subtitle')
             ?? ($this->hasIdSub(1) ? $this->getIdSlice(1) : null);
     }
 

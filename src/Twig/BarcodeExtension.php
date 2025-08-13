@@ -51,7 +51,7 @@ class BarcodeExtension extends AbstractExtension
      * @throws \RuntimeException if the SVG file cannot be written.
      */
 
-    public function ean13(string|int $code, bool $showDigits = false, int $widthFactor = 1, int $height = 30): string
+    public function ean13(string|int $code, bool $showDigits = false, float $widthFactor = 1, float $height = 30): string
     {
         $digits = preg_replace('/\D+/', '', (string) $code);
 
@@ -63,7 +63,14 @@ class BarcodeExtension extends AbstractExtension
             throw new \InvalidArgumentException("{$digits} is not a valid EAN-13 code. It must be 12 or 13 digits long.");
         }
 
-        $filename = sprintf('%s-%d-%d-%d.svg', $digits, (int) $showDigits, $widthFactor, $height);
+        $filename = sprintf(
+            '%s-%d-%s-%s.svg',
+            $digits,
+            (int) $showDigits,
+            str_replace('.', '_', $widthFactor),
+            str_replace('.', '_', $height)
+        );
+
         if (file_exists($this->realPath . $filename)) {
             return $this->assetFolder . $filename;
         }

@@ -2,7 +2,7 @@
     position: relative;
 
     /**
-     * Contain the label title only.
+     * Contain the organization title and subtitle.
      */
     header {
         margin: $space-md;
@@ -20,15 +20,16 @@
         h2 {
             font-size: 2em;
             letter-spacing: -0.01em;
-            opacity: 0.8;
+            opacity: 0.7;
         }
     }
 
     /**
-     * Contain the label subtitle and image.
+     * Contain the label title, subtile and logo.
      */
     main {
         margin-top: $space-lg;
+
         h1 {
             font-size: 6em;
         }
@@ -36,19 +37,16 @@
         h2 {
             font-size: 2em;
             color: black;
-            opacity: 0.8;
+            opacity: 0.7;
         }
 
         img {
             width: 70%;
-            height: auto;
-            object-fit: contain;
-            object-position: center;
         }
     }
 
     /**
-     * Contain the label certifications and QR code.
+     * Contain the label QR code, certifications and barcode.
     */
     footer {
         position: absolute;
@@ -56,52 +54,25 @@
 
         display: flex;
         flex-direction: column;
-        row-gap: $space-md;
-        padding: $space-md;
+        align-items: flex-start;
+        row-gap: $space-sm;
+        padding: $space-sm;
 
-        img.qrcode {
-            height: 10em;
-        }
-
-        .certifications {
-            margin-top: $space-sm;
-            text-align: left;
-
-            .certification > img {
-                width: 5em;
-            }
-        }
+        img.qrcode { width: 6em; }
+        img.certification { width: 5em; }
+        img.barcode { width: 10em; }
     }
 
     /**
      * Contain organization and/or label aside information: address, ingredients, quantity, etc.
      */
+    @import 'element/aside';
     aside {
         position: absolute;
         top: 0;
         right: 0;
 
-        display: flex;
-        justify-content: end;
-        height: 100%;
-        padding: $space-md;
-        font-size: 0.8em;
-
-        .address,
-        .ingredients {
-            writing-mode: vertical-rl;
-            height: 90%;
-        }
-
-        .address {
-            font-size: 0.9em;
-            margin-right: 0.3em;
-        }
-
         .quantity {
-            position: absolute;
-            bottom: 0.7em;
-            width: max-content;
             font-size: 2em;
         }
     }

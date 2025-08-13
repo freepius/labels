@@ -5,7 +5,7 @@ v#logo-goat:
 default:
   org:
     title: les Roves Nomades
-    slogan: Élevage pastoral de chèvres du Rove
+    subtitle: Élevage pastoral de chèvres du Rove
     address: <b>Les Roves Nomades</b>
       <br>529 chemin des tourettes, 26400 Chabrillan
     shortAdress: Chabrillan, Drôme
@@ -27,7 +27,7 @@ châtaignes:
   org:
     logo: '/images/logo-châtaigne.png'
   parent: three-parts-rectangle-5of2
-  subTitle: d'Ardèche
+  subtitle: d'Ardèche
   ingredients:
     1: châtaignes
 
@@ -56,22 +56,22 @@ terrine_nature:
     2: (90%), origan*,
 
 terrine_foie-olives:
-  subTitle: Foie & olives noires
+  subtitle: Foie & olives noires
   ingredients:
     2: (85% dont foie 30%), olives noires* (5%), persil*, ail*, cognac*,
 
 terrine_citron-olives:
-  subTitle: Citron confit & olives vertes
+  subtitle: Citron confit & olives vertes
   ingredients:
     2: (80%), citron confit* (5%), olives vertes* (5%),
 
 terrine_poivre-vert:
-  subTitle: Poivre vert
+  subtitle: Poivre vert
   ingredients:
     2: (85%), poivre vert* (2%), échalotes*, cognac*,
 
 terrine_abricots-amandes:
-  subTitle: Abricots & amandes
+  subtitle: Abricots & amandes
   ingredients:
     2: (80%), abricots secs* (5%), <b>amandes</b>* (5%),
     3: sel, poivre*, agar-agar*.
@@ -97,21 +97,21 @@ blanquette:
 tajine:
   parent: plat-cuisine
   title: Tajine de chevreau
-  subTitle: pruneaux, raisins, miel, épices
+  subtitle: pruneaux, raisins, miel, épices
   ingredients: viande caprine 55% (élevage à la ferme), oignons*, pruneaux* (7%), raisins* (7%),
     miel* (2%), épices*, sel, poivre*. *agriculture bio
 
 mijote-romarin-moutarde:
   parent: plat-cuisine
   title: Mijoté de chevreau
-  subTitle: Romarin & Moutarde
+  subtitle: Romarin & Moutarde
   ingredients: viande caprine 60% (élevage à la ferme), vin blanc* (<b>sulfites</b>), <b>moutarde</b>* (2%), romarin* (2%),
     <b>crème</b>*, sel, poivre*, amidon de maïs*. *agriculture bio, <b>allergènes</b>
 
 saucisses-herbes:
   parent: three-parts-rectangle-5of2
   title: Saucisses aux herbes
-  subTitle: viande de chevreaux
+  subtitle: viande de chevreaux
   ingredients: viande de chevreaux élevés à la ferme (80%), boyau de mouton*,
     gras de porc*, persil*, origan*, thym*, sel, poivre*. *agriculture bio
   quantity: 300g net
@@ -128,7 +128,7 @@ four-parts-in-a-round:
 glace-top-in-a-round:
   parent: four-parts-in-a-round
   title: glace
-  subTitle: au lait de chèvres
+  subtitle: au lait de chèvres
   extraInfo:
     - Sortir 10 min. avant de déguster
     - À conserver à -18 °C
@@ -143,10 +143,10 @@ icecream:
     - avery-rectangle-2x4
   org:
     title: Glace paysanne
-    slogan: au lait de chèvres du Rove
+    subtitle: au lait de chèvres du Rove
   quantity: 480 mL net
   qrcode: "/images/qrcode/icecream-plus.png"
-  barcodeOptions: {showDigits: true}
+  barcodeOptions: {showDigits: true, height: 30, widthFactor: 1.5}
   ingredients:
     1: ~
     2: ~
@@ -161,11 +161,11 @@ icecream:
       parent: three-parts-rectangle-5of2
       template: icecream-small
       qrcode: "/images/qrcode/icecream.png"
-      barcodeOptions: {showDigits: false}
+      barcodeOptions: {showDigits: false, height: 30, widthFactor: 1}
       quantity: 120 mL net
       org:
         title: Glace paysanne
-        slogan: au lait de chèvres du Rove
+        subtitle: au lait de chèvres du Rove
       extraInfo:
         - Sortir 10 min. avant de déguster
         - À conserver à -18 °C
@@ -174,11 +174,13 @@ icecream:
 
 icecream_vanille:
   title: Vanille
-  subTitle: de Madagascar
+  subtitle: de Madagascar
+  barcode: '9588607000148'
+
 
 icecream_fraise:
   title: Fraise
-  subTitle: de la Drôme
+  subtitle: de la Drôme
   barcode: '9588607000148'
   ingredients:
     1: lait de chèvres du Rove* (42%)

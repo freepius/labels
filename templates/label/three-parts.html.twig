@@ -8,7 +8,7 @@
             {{ org.title }}
         </h1>
 
-        <h2>{{ org.slogan }}</h2>
+        <h2>{{ org.subtitle }}</h2>
     </header>
 
     <main>
@@ -18,9 +18,9 @@
 
         <h1>{{ label.title }}</h1>
 
-        {% if label.subTitle %}
-            <h2 {% if label.subTitle|length > 20 %}class="long"{% endif %}>
-                {{ label.subTitle }}
+        {% if label.subtitle %}
+            <h2 {% if label.subtitle|length > 20 %}class="long"{% endif %}>
+                {{ label.subtitle }}
             </h2>
         {% endif %}
     </main>

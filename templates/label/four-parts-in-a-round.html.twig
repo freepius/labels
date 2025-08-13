@@ -29,13 +29,13 @@
 
     <!-- Label subtitle or organization info, + certifications if any -->
     <footer>
-        {% if label.subTitle %}
-            <h2 class="label-subtitle" {% if label.subTitle|length > 20 %}class="long"{% endif %}>
-                {{ label.subTitle }}
+        {% if label.subtitle %}
+            <h2 class="label-subtitle" {% if label.subtitle|length > 20 %}class="long"{% endif %}>
+                {{ label.subtitle }}
             </h2>
         {% else %}
             <h2 class="org-website">{{ org.website }}</h2>
-            <h3 class="org-slogan">{{ org.slogan }}</h3>
+            <h3 class="org-subtitle">{{ org.subtitle }}</h3>
         {% endif %}
 
         {{ include('label/element/certifications.html.twig') }}

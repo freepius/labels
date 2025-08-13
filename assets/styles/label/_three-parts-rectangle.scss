@@ -1,7 +1,7 @@
 &.three-parts-rectangle {
-    --width-header: 38%;
-    --width-main: 48%;
-    --width-aside: 12%;
+    --width-header: 37%;
+    --width-main: 46%;
+    --width-aside: 15%;
     --column-gap: 1%;
 
     position: relative;
@@ -10,7 +10,7 @@
     column-gap: var(--column-gap);
 
     /**
-     * Contain the organization logo, title and slogan
+     * Contain the organization logo, title and subtitle
      */
     header {
         display: grid;
@@ -24,7 +24,7 @@
             font-size: 3.2em;
         }
 
-        // slogan
+        // subtitle
         h2 {
             font-size: 1.4em;
             -webkit-text-stroke: 0.01em;
@@ -62,40 +62,7 @@
     /**
      * Contain organization and/or label aside information: address, ingredients, quantity, etc.
      */
-    aside {
-        display: flex;
-        column-gap: $space-md;
-        justify-content: end;
-        overflow: hidden;
-        height: 90%;
-        padding: $space-sm;
-        font-size: 0.80em;
-
-        b {
-            font-weight: bold;
-        }
-
-        > :not(.quantity) {
-            writing-mode: vertical-rl;
-        }
-
-        .extra-info > li {
-            margin-right: $space-md;
-        }
-
-        .extra-info, .address {
-            font-size: 0.9em;
-        }
-
-        .quantity {
-            position: absolute;
-            bottom: $space-sm;
-            right: $space-sm;
-
-            font-size: 1.2em;
-            font-weight: bold;
-        }
-    }
+    @import 'element/aside';
 
     /**
      * Contain the label certifications, QR code and barcode.

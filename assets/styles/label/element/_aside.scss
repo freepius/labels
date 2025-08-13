@@ -1,0 +1,40 @@
+/**
+ * Contain organization and/or label aside information: address, ingredients, quantity, etc.
+ */
+aside {
+    display: flex;
+    column-gap: $space-md;
+    justify-content: end;
+    width: calc(100% - 2 * $space-sm);
+    height: calc(100% - 2 * $space-sm);
+    padding: $space-sm;
+    font-size: 0.8em;
+    overflow: hidden;
+
+    b {
+        font-weight: bold;
+    }
+
+    > :not(.quantity) {
+        height: 92%;
+        writing-mode: vertical-rl;
+    }
+
+    .extra-info > li {
+        margin-right: $space-md;
+    }
+
+    .extra-info, .address {
+        font-size: 0.9em;
+    }
+
+    .quantity {
+        position: absolute;
+        bottom: $space-sm;
+        right: $space-sm;
+
+        width: max-content;
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+}

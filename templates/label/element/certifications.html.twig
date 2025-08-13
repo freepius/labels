@@ -1,10 +1,8 @@
 {% if (label.certifications ?? [])|length > 0 %}
-    <ul class="certifications">
+    <div class="certifications">
         {% for certif in label.certifications %}
             {% set path = 'images/certifications/' ~ certif ~ '.png' %}
-            <li class="certification certification-{{ certif }}">
-                <img src="{{ asset(path) }}" />
-            </li>
+            <img class="certification certification-{{ certif }}" src="{{ asset(path) }}" />
         {% endfor %}
-    </ul>
+    </div>
 {% endif %}
