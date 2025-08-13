@@ -34,8 +34,10 @@ class MainController extends AbstractController
     }
 
     #[Route('/page/{page_id}/{label_id}')]
-    public function pageLabel(Page $page, Label $label): Response
+    public function pageLabel(Page $page, Label $label, Request $request): Response
     {
+        $label->loadVersions($this->getVersionsQuery($request));
+
         if (false === in_array($page->getId(), $label->printableOn)) {
             throw new \DomainException("Label \"{$label->getId()}\" is not printable on page \"{$page->getId()}\"");
         }

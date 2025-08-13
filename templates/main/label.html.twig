@@ -27,9 +27,12 @@
     <nav id="pages">
         <h1>{{ 'Print on'|trans }}</h1>
         <ul>
+            {% set queryParams = loadedVersions is empty ? '' : '?v=' ~ loadedVersions|join(',') %}
             {% for page in label.printableOn %}
                 <li>
-                    <a href="/page/{{ page }}/{{ label.id }}">{{ page }}</a>
+                    <a href="/page/{{ page }}/{{ label.id }}{{ queryParams }}">
+                        {{ page }}
+                    </a>
                 </li>
             {% endfor %}
         </ul>
