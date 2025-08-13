@@ -1,5 +1,10 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+{% endblock %}
+
 {% block body_class %}container-label{% endblock %}
 
 {% block body %}
@@ -44,4 +49,19 @@
             {% endfor %}
         </ul>
     </nav>
+
+    <!-- Toolbox for label management -->
+    <aside id="toolbox">
+        <h1>{{ 'Toolbox'|trans }}</h1>
+
+        <button id="turn-left" title="{{ 'Turn left'|trans }}">
+            <i class="fa-solid fa-rotate-left"></i>
+        </button>
+        <button id="turn-right" title="{{ 'Turn right'|trans }}">
+            <i class="fa-solid fa-rotate-right"></i>
+        </button>
+        <button id="reset" title="{{ 'Reset'|trans }}">
+            <i class="fa-solid fa-rotate"></i>
+        </button>
+    </aside>
 {% endblock %}
