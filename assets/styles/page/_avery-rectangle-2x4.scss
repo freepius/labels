@@ -1,7 +1,7 @@
 &.avery-rectangle-2x4 {
-    @include size-page-a4($top: 1.4cm, $bottom: 1.2cm, $left: 0.4cm, $right: 0.5cm);
+    @include size-page-a4($top: 1.3cm, $bottom: 1.3cm, $left: 0.4cm, $right: 0.5cm);
     @include grid(2, 4);
-    grid-column-gap: 0.3cm;
+    grid-column-gap: 3mm;
     align-items: center;
     justify-items: center;
 
@@ -10,7 +10,8 @@
     }
 
     > .label {
-        --label-size-width: 99.1mm;
-        height: 67.7mm;
+        --label-size-width: calc(99.1mm - 2*1.5mm);
+        height: calc(67.7mm - 2*1.5mm);
+        margin: 1.5mm;
     }
 }

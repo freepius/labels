@@ -44,6 +44,10 @@
             font-size: 5em;
             letter-spacing: -0.02em;
             line-height: 0.9em;
+
+            &.long {
+                font-size: 4.2em;
+            }
         }
 
         // subtitle

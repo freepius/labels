@@ -22,15 +22,11 @@
     }
 
     aside {
-        border-left: 0.1em solid black;
+        border-left: 0.1em solid #ddd;
         height: calc(100% - 2 * $space-sm);
 
-        .extra-info, .address {
-            font-size: unset;
-        }
-
         .quantity {
-            left: calc(var(--width-header) + var(--width-main) + 2*var(--column-gap) + $space-sm);
+            left: calc(var(--width-header) + var(--width-main) + 2*var(--column-gap) + $space-md);
             right: unset;
             writing-mode: vertical-rl;
         }

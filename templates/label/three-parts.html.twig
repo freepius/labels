@@ -16,10 +16,12 @@
             <img src="{{ asset(mainImg) }}" />
         {% endif %}
 
-        <h1>{{ label.title }}</h1>
+        <h1 {% if label.title|length > 8 %}class="long"{% endif %}>
+            {{ label.title }}
+        </h1>
 
         {% if label.subtitle %}
-            <h2 {% if label.subtitle|length > 20 %}class="long"{% endif %}>
+            <h2 {% if label.subtitle|length > 15 %}class="long"{% endif %}>
                 {{ label.subtitle }}
             </h2>
         {% endif %}

@@ -115,9 +115,6 @@ saucisses-herbes:
   ingredients: viande de chevreaux élevés à la ferme (80%), boyau de mouton*,
     gras de porc*, persil*, origan*, thym*, sel, poivre*. *agriculture bio
   quantity: 300g net
-  barcode: '9588607000148'
-  certifications: [bio]
-  qrcode: "/images/qrcode/icecream.png"
 
 four-parts-in-a-round:
   parent: default
@@ -128,7 +125,7 @@ four-parts-in-a-round:
 glace-top-in-a-round:
   parent: four-parts-in-a-round
   title: glace
-  subtitle: au lait de chèvres
+  subtitle: au lait de chèvre
   extraInfo:
     - Sortir 10 min. avant de déguster
     - À conserver à -18 °C
@@ -143,45 +140,98 @@ icecream:
     - avery-rectangle-2x4
   org:
     title: Glace paysanne
-    subtitle: au lait de chèvres du Rove
-  quantity: 480 mL net
-  qrcode: "/images/qrcode/icecream-plus.png"
+    subtitle: au lait de chèvre du Rove
+  quantity: 960 mL net
+  qrcode: "/images/qrcode/icecream.png"
   barcodeOptions: {showDigits: true, height: 30, widthFactor: 1.5}
   ingredients:
     1: ~
     2: ~
     3: miel de la Drôme*,
     4: sucre de betterave*, glucose*,
-    5: <b>jaune d'œuf</b>*
+    5: <b>jaune d'œuf</b>*,
     6: huile de tournesol*,
-    7: guar*, caroube*,
-    8: "*agriculture bio, <b>allergènes</b>"
+    7: guar*, caroube*
+    8: "(*agriculture bio, <b>allergènes</b>)"
   versions:
+    middle:
+      quantity: 480 mL net
     small:
+      quantity: 120 mL net
       parent: three-parts-rectangle-5of2
       template: icecream-small
-      qrcode: "/images/qrcode/icecream.png"
       barcodeOptions: {showDigits: false, height: 30, widthFactor: 1}
-      quantity: 120 mL net
       org:
         title: Glace paysanne
-        subtitle: au lait de chèvres du Rove
+        subtitle: au lait de chèvre du Rove
       extraInfo:
         - Sortir 10 min. avant de déguster
         - À conserver à -18 °C
         - Ne pas recongeler un produit décongelé
-        - 'DDM : <tspan dx="75">'
+        - 'DDM :'
 
 icecream_vanille:
   title: Vanille
-  subtitle: de Madagascar
-  barcode: '9588607000148'
-
+  subtitle: noire de Madagascar
+  ingredients:
+    1: lait de chèvre du Rove (72%),
+    2: vanille noire de Madagascar* (3%),
+  barcode: '9588607000179'
+  versions:
+    middle: {barcode: '9588607000162'}
+    small: {barcode: '9588607000155'}
 
 icecream_fraise:
   title: Fraise
   subtitle: de la Drôme
-  barcode: '9588607000148'
   ingredients:
-    1: lait de chèvres du Rove* (42%)
-    2: fraise de la Drôme* (25%),
+    1: lait de chèvre du Rove (42%),
+    2: fraise de la Drôme* (25%),
+  barcode: '9588607000209'
+  versions:
+    middle: {barcode: '9588607000193'}
+    small: {barcode: '9588607000186'}
+
+icecream_chocolat:
+  title: Chocolat
+  subtitle: noir intense
+  ingredients:
+    1: lait de chèvre du Rove (66%),
+    2: poudre de cacao* (4%), chocolat noir 60%* (5%),
+  barcode: '9588607000230'
+  versions:
+    middle: {barcode: '9588607000223'}
+    small: {barcode: '9588607000216'}
+
+icecream_framboise:
+  title: Framboise
+  subtitle: d'Ardèche
+  ingredients:
+    1: lait de chèvre du Rove (47%),
+    2: framboise d'Ardèche* (25%), jus de citron*,
+  barcode: '9588607000261'
+  versions:
+    middle: {barcode: '9588607000254'}
+    small: {barcode: '9588607000247'}
+
+icecream_noisette:
+  title: Noisette
+  subtitle: gourmande
+  ingredients:
+    1: lait de chèvre du Rove (65%),
+    2: pâte de noisette* (9%),
+  barcode: '9588607000292'
+  versions:
+    middle: {barcode: '9588607000285'}
+    small: {barcode: '9588607000278'}
+
+icecream_chataigne:
+  title: Châtaigne
+  subtitle: AOP d'Ardèche
+  ingredients:
+    1: lait de chèvre du Rove (60%),
+    2: châtaigne AOP d'Ardèche* (16%),
+  barcode: '9588607000322'
+  versions:
+    middle: {barcode: '9588607000315'}
+    small: {barcode: '9588607000308'}
