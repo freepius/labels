@@ -1,8 +1,0 @@
-{% set ingredients = label.ingredients ?? [] %}
-{% set isArray = ingredients is iterable %}
-{% set ingredients = (isArray ? ingredients : [ingredients])|join(' ') %}
-
-<section class="ingredients {{ ingredients|length > 100 ? 'long' }}">
-    <h1>{{ 'Ingrédients'|trans }}</h1>
-    <p>{{ ingredients|raw }}</p>
-</section>

@@ -3,16 +3,17 @@
         display: inline;
     }
 
-    h1:after {
-        content: ' :';
-    }
-
     &.long {
         font-size: 0.9em;
     }
 
-    b {
+    b, tspan.b {
         font-style: italic;
+        font-weight: bold;
         text-decoration: underline;
     }
+}
+
+tspan.ingredients {
+    font-size: 0.9em;
 }

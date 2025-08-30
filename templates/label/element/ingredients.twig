@@ -1,0 +1,20 @@
+{% set ingredients = label.ingredients ?? [] %}
+{% set isArray = ingredients is iterable %}
+{% set ingredients = (isArray ? ingredients : [ingredients])|join(' ') %}
+
+{% if (format ?? 'html') == 'svg' %}
+    {% set section, title, list = 'tspan', 'tspan', 'tspan' %}
+    {% set ingredients = ingredients|replace({
+        '<b>': '<tspan class="b">',
+        '</b>': '</tspan>',
+    })%}
+{% else %}
+    {% set section, title, list = 'section', 'h1', 'p' %}
+{% endif %}
+
+{% if ingredients is not empty %}
+    <{{ section }} class="ingredients {{ ingredients|length > 100 ? 'long' }}">
+        <{{ title }}>{{ 'Ingrédients :'|trans }}</{{ title }}>
+        <{{ list }}>{{ ingredients|raw }}</{{ list }}>
+    </{{ section }}>
+{% endif %}

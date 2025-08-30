@@ -1,6 +1,6 @@
 {% set org = label.org %}
 
-<article class="{{ label.parentId }} {{ label.id }} four-parts-in-a-round {{ label.cssClasses }}">
+<article class="four-parts-in-a-round {{ label.cssClasses }}">
     <!-- Organization title and short address -->
     <header>
         <!-- The title follows a curved path -->
@@ -22,23 +22,27 @@
 
     <!-- The label title over the organization logo -->
     <main style="background-image: url({{ asset(org.logo) }});">
-        <h1 {% if label.title|length < 7 %}class="short"{% endif %}>
+        {% set len = label.title|length %}
+
+        <h1 class="{{ len < 6 ? 'short' : (len > 8 ? 'long' : '') }}">
             {{ label.title }}
         </h1>
+
+        {% if label.subtitle %}
+            <h2 {% if label.subtitle|length > 20 %}class="long"{% endif %}>
+                {{ label.subtitle }}
+            </h2>
+        {% endif %}
     </main>
 
     <!-- Label subtitle or organization info, + certifications if any -->
     <footer>
-        {% if label.subtitle %}
-            <h2 class="label-subtitle" {% if label.subtitle|length > 20 %}class="long"{% endif %}>
-                {{ label.subtitle }}
-            </h2>
-        {% else %}
-            <h2 class="org-website">{{ org.website }}</h2>
-            <h3 class="org-subtitle">{{ org.subtitle }}</h3>
-        {% endif %}
+        <h2 class="org-website">{{ org.website }}</h2>
+        <h3 class="org-subtitle">{{ org.subtitle }}</h3>
 
+        {{ include('label/element/qrcode.html.twig') }}
         {{ include('label/element/certifications.html.twig') }}
+        {{ include('label/element/barcode.html.twig') }}
     </footer>
 
     <!-- Various information about organization and/or label, following a curved path  -->
@@ -51,7 +55,9 @@
                 />
             </defs>
                 <text textLength="1000" lengthAdjust="spacing"  dy="10">
-                    <textPath href="#extra-info-arc" startOffset="48%" text-anchor="middle">
+                    <textPath href="#extra-info-arc" startOffset="2%">
+                        {{ include('label/element/ingredients.twig', {label: label, format: 'svg'}) }}
+                        {{ label.quantity ?? null }}
                         {{ include('label/element/extraInfo.text.twig') }}
                     </textPath>
                 </text>

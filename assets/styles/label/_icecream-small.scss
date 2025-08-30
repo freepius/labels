@@ -13,6 +13,10 @@
     main {
         h1 {
             align-self: end;
+
+            &.long {
+                font-size: 4.2em;
+            }
         }
 
         h2 {
