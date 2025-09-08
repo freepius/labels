@@ -15,12 +15,12 @@
     @import 'label/format/3of2';
 
     @import 'label/boite-aux-lettres';
-    @import 'label/châtaignes';
+    @import 'label/three-parts-rectangle';
     @import 'label/four-parts-in-a-round';
     @import 'label/icecream-main';
     @import 'label/icecream-small';
     @import 'label/icecream-specific';
-    @import 'label/three-parts-rectangle';
+    @import 'label/châtaignes';
 
     width: var(--label-size-width);
     height: calc( var(--label-size-width) / var(--label-size-ratio) );

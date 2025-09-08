@@ -25,6 +25,8 @@ three-parts-rectangle-5of2:
 
 châtaignes:
   org:
+    title: ~
+    subtitle: ~
     logo: '/images/logo-châtaigne.png'
   parent: three-parts-rectangle-5of2
   subtitle: d'Ardèche
@@ -35,6 +37,7 @@ châtaignes_crème:
   title: Crème de Châtaignes
   quantity: 400g net
   ingredients:
+    1: châtaignes,
     2: sucre bio
 
 châtaignes_entières:
@@ -131,26 +134,25 @@ yaourt:
     1: <b>lait</b> de chèvre pasteurisé,
     3: ferments lactiques
   extraInfo:
-    - <tspan dx=180>430 g net
+    - <tspan dx=200>430 g net
     - Conserver à +4-6 °C
-    - 'DLC : <tspan dx="75">'
+    - 'DLC : voir côté'
 
 faisselle:
   parent: yaourt
   title: faisselle
-  subtitle: ~
   barcode: '9588607000377'
   ingredients:
     3: ferments, présure
   extraInfo:
-    0: <tspan dx=180>450 g net
+    0: <tspan dx=200>450 g net
 
 glace-top-in-a-round:
   parent: four-parts-in-a-round
   title: glace
   subtitle: au lait de chèvre
   extraInfo:
-    - <tspan dx=100>Sortir 10 min. avant de déguster
+    - Sortir 10 min. avant de déguster
     - À conserver à -18 °C
     - Ne pas recongeler un produit décongelé
     - 'DDM : <tspan dx="75">'
@@ -174,8 +176,9 @@ icecream:
     4: sucre de betterave*, glucose*,
     5: <b>jaune d'œuf</b>*,
     6: huile de tournesol*,
-    7: guar*, caroube*.
-    8: "*agriculture bio, <b>allergènes</b>"
+    7: ~
+    8: guar*, caroube*.
+    9: "*agriculture bio, <b>allergènes</b>"
   versions:
     middle:
       quantity: 480 mL net
@@ -210,6 +213,7 @@ icecream_fraise:
   ingredients:
     1: <b>lait</b> de chèvre du Rove (42%),
     2: fraise de la Drôme* (25%),
+    7: jus de citron*,
   barcode: '9588607000209'
   versions:
     middle: {barcode: '9588607000193'}
@@ -231,7 +235,8 @@ icecream_framboise:
   subtitle: d'Ardèche
   ingredients:
     1: <b>lait</b> de chèvre du Rove (47%),
-    2: framboise d'Ardèche* (25%), jus de citron*,
+    2: framboise d'Ardèche* (25%),
+    7: jus de citron*,
   barcode: '9588607000261'
   versions:
     middle: {barcode: '9588607000254'}
@@ -269,3 +274,15 @@ icecream_safran:
   versions:
     middle: {barcode: '9588607000346'}
     small: {barcode: '9588607000339'}
+
+icecream_yaourt:
+  title: Yaourt
+  subtitle: de la ferme
+  ingredients:
+    1: <b>lait</b> de chèvre du Rove (33%),
+    2: yaourt de la ferme (40%),
+    7: jus de citron*,
+  barcode: '9588607000384'
+  versions:
+    middle: {barcode: '9588607000377'}
+    small: {barcode: '9588607000360'}

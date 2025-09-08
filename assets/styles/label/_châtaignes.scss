@@ -1,7 +1,6 @@
 &.châtaignes {
-    header > h1 {
-        align-content: end;
-        font-size: 2.5em;
+    header {
+        grid-template-rows: 100% 0%;
     }
 
     main {
@@ -13,8 +12,8 @@
     }
 
     main > h2 {
-        color: $color-orange;
-        -webkit-text-stroke: 0.02em black;
+        color: unset;
+        -webkit-text-stroke: unset;
         background-color: unset;
     }
 
