@@ -26,27 +26,17 @@
     }
 
     aside {
-        border-left: 0.1em solid #ddd;
+        border-left: 0.1em solid #bbb;
         height: calc(100% - 2 * $space-sm);
+
+        :not(.quantity) {
+            height: 100%;
+        }
 
         .quantity {
             left: calc(var(--width-header) + var(--width-main) + 2*var(--column-gap) + $space-md);
             right: unset;
             writing-mode: vertical-rl;
-        }
-    }
-
-    footer {
-        flex-wrap: wrap;
-        bottom: $space-sm;
-
-        img {
-            height: 2.6em;
-        }
-
-        > :nth-child(3) {
-            flex-basis: 100%;
-            margin-bottom: $space-sm;
         }
     }
 }

@@ -111,13 +111,24 @@ mijote-romarin-moutarde:
   ingredients: viande caprine 60% (élevage à la ferme), vin blanc* (<b>sulfites</b>), <b>moutarde</b>* (2%), romarin* (2%),
     <b>crème</b>*, sel, poivre*, amidon de maïs*. *agriculture bio, <b>allergènes</b>
 
-saucisses-herbes:
+saucisse-aux-herbes:
   parent: three-parts-rectangle-5of2
   title: Saucisses aux herbes
   subtitle: viande de chevreaux
   ingredients: viande de chevreaux élevés à la ferme (80%), boyau de mouton*,
     gras de porc*, persil*, origan*, thym*, sel, poivre*. *agriculture bio
   quantity: 300g net
+
+saucisse-seche:
+  org:
+    subtitle: Fabriqué le 22/07/2025
+  parent: three-parts-rectangle-5of2
+  title: Saucisse sèche <small>de chevreau</small>
+  subtitle: 7,90 € pièce
+  ingredients: viande de chevreaux élevés à la ferme (75%),
+    gras de porc*, vin rouge*, sel, ail*, sucre*, poivre*. *agriculture bio
+  quantity: environ 170g net
+  barcode: '9588607000414'
 
 four-parts-in-a-round:
   parent: default
@@ -129,7 +140,7 @@ yaourt:
   parent: four-parts-in-a-round
   title: yaourt
   subtitle: au lait de chèvre
-  barcode: '9588607000360'
+  barcode: '9588607000391'
   ingredients:
     1: <b>lait</b> de chèvre pasteurisé,
     3: ferments lactiques
@@ -141,7 +152,7 @@ yaourt:
 faisselle:
   parent: yaourt
   title: faisselle
-  barcode: '9588607000377'
+  barcode: '9588607000407'
   ingredients:
     3: ferments, présure
   extraInfo:

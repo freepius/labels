@@ -4,14 +4,16 @@ avery-rectangle-2x4: {x: 2, y: 4}
 avery-rectangle-2x6: {x: 2, y: 6}
 avery-round-80mm-2x3: {x: 2, y: 3}
 
-terrines-3-each-news:
+terrines-2-each:
   cssClasses:
     - avery-rectangle-2x6
   labels:
-    terrine-citron-olives: 3
-    terrine-poivre-vert: 3
-    terrine-foie-olives: 3
-    terrine-abricots-amandes: 3
+    terrine_nature: 2
+    terrine_citron-olives: 2
+    terrine_poivre-vert: 2
+    terrine_foie-olives: 2
+    terrine_abricots-amandes: 2
+    rillettes: 2
 
 châtaignes:
   cssClasses:
@@ -27,7 +29,7 @@ plats:
     tajine: 6
     blanquette: 1
     boite-gite: 1
-    terrine-nature: 4
+    terrine_nature: 4
 
 boite-aux-lettres:
   cssClasses:
