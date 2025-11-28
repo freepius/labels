@@ -22,6 +22,18 @@ three-parts-rectangle-5of2:
   printableOn:
     - A4-2x7
     - avery-rectangle-2x6
+    - avery-rectangle-2x7
+
+confiture-prune:
+  parent: three-parts-rectangle-5of2
+  title: Confiture <small>cuite au feu de bois</small>
+  subtitle: Prune
+  quantity: 400g net
+  ingredients:
+    1: prunes d'Ardèche (60%),
+    2: sucre* (40%),
+    3: pectine*.
+    4: "*agriculture bio"
 
 châtaignes:
   org:
@@ -141,6 +153,7 @@ yaourt:
   title: yaourt
   subtitle: au lait de chèvre
   barcode: '9588607000391'
+  barcodeOptions: {showDigits: true, widthFactor: 1.5}
   ingredients:
     1: <b>lait</b> de chèvre pasteurisé,
     3: ferments lactiques

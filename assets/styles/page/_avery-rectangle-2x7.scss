@@ -1,0 +1,22 @@
+&.avery-rectangle-2x7 {
+    @include size-page-a4($top: 1.55cm, $bottom: 1.55cm, $left: 0.50cm, $right: 0.40cm);
+    @include grid(2, 7);
+    grid-column-gap: 0.3cm;
+    align-items: center;
+    justify-items: center;
+
+    @media screen {
+        background: url('../images/page/avery-rectangle-2x7.jpg') no-repeat center center / contain;
+    }
+
+    > .label {
+        // Add a buffer of 1mm around each label
+        --label-size-width: calc(99mm - 2*1mm);
+        height: calc(38mm - 2*1mm);
+        margin: 1mm;
+
+        > aside {
+            padding-top: 0.7em;
+        }
+    }
+}

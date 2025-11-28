@@ -13,3 +13,20 @@
         }
     }
 }
+
+&.confiture-prune {
+    main {
+        align-content: center;
+
+        h1 {
+            display: grid;
+            line-height: 0.7em;
+
+            small {
+                color: black;
+                font-size: 0.5em;
+                -webkit-text-stroke: 0;
+            }
+        }
+    }
+}
