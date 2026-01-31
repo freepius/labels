@@ -10,8 +10,6 @@
     }
 
     > .label {
-        --label-size-width: calc(99.1mm - 2*1.5mm);
-        height: calc(67.7mm - 2*1.5mm);
-        margin: 1.5mm;
+        @include label-size-with-buffer(99.1mm, 67.7mm, 1.5mm);
     }
 }

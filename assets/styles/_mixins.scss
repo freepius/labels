@@ -76,3 +76,20 @@
 ) {
     @include size-with-padding(21cm, 29.7cm, $padding, $top, $bottom, $left, $right);
 }
+
+/**
+ * Set the size of a label.
+ */
+@mixin label-size($width, $height) {
+    --label-size-width: #{$width};
+    height: #{$height};
+}
+
+/**
+ * Set the size of a label, minus a buffer around it.
+ */
+@mixin label-size-with-buffer($width, $height, $buffer: 1mm) {
+    --label-size-width: calc(#{$width} - 2*#{$buffer});
+    height: calc(#{$height} - 2*#{$buffer});
+    margin: #{$buffer};
+}

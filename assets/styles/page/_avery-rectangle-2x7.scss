@@ -1,5 +1,5 @@
 &.avery-rectangle-2x7 {
-    @include size-page-a4($top: 1.55cm, $bottom: 1.55cm, $left: 0.50cm, $right: 0.40cm);
+    @include size-page-a4($top: 1.65cm, $bottom: 1.45cm, $left: 0.45cm, $right: 0.45cm);
     @include grid(2, 7);
     grid-column-gap: 0.3cm;
     align-items: center;
@@ -10,10 +10,8 @@
     }
 
     > .label {
-        // Add a buffer of 1mm around each label
-        --label-size-width: calc(99mm - 2*1mm);
-        height: calc(38mm - 2*1mm);
-        margin: 1mm;
+        --width-aside: 16%;
+        @include label-size-with-buffer(99.2mm, 38mm, 1mm);
 
         > aside {
             padding-top: 0.7em;

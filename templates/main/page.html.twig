@@ -5,12 +5,14 @@
 {% block body %}
     <main class="{{ page.cssClasses }}">
         {% for id, number in page.labels %}
-            {% set label = labels[id] %}
-            {% set label = include(label.templateName, {label}, with_context = false, sandboxed = true) %}
+            {% if number > 0 %}
+                {% set label = labels[id] %}
+                {% set label = include(label.templateName, {label}, with_context = false, sandboxed = true) %}
 
-            {% for i in 1..number %}
-                {{ label|raw }}
-            {% endfor %}
+                {% for i in 1..number %}
+                    {{ label|raw }}
+                {% endfor %}
+            {% endif %}
         {% endfor %}
     </main>
 {% endblock %}
