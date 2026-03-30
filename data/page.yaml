@@ -4,17 +4,18 @@ avery-rectangle-2x4: {x: 2, y: 4}
 avery-rectangle-2x6: {x: 2, y: 6}
 avery-rectangle-2x7: {x: 2, y: 7}
 avery-round-80mm-2x3: {x: 2, y: 3}
+avery-round-88mm-2x3: {x: 2, y: 3}
 
 terrines:
   cssClasses:
     - avery-rectangle-2x7
   labels:
-    terrine_nature: 3
-    terrine_citron-olives: 2
-    terrine_poivre-vert: 2
-    terrine_foie-olives: 2
-    terrine_abricots-amandes: 2
-    rillettes: 3
+    terrine_nature: 8
+    terrine_citron-olives: 4
+    terrine_poivre-vert: 1
+    terrine_foie-olives: 1
+    terrine_abricots-amandes: 0
+    rillettes: 0
 
 châtaignes:
   cssClasses:

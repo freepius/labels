@@ -1,0 +1,11 @@
+&.avery-round-88mm-2x3 {
+    @include size-page-a4($top: 1.2cm, $bottom: 1.1cm, $left: 1.4cm, $right: 1.4cm);
+    @include grid(2, 3);
+    gap: 0.5cm;
+    align-items: center;
+    justify-items: center;
+
+    > .label {
+        --label-size-width: 88mm;
+    }
+}

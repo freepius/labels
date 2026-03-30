@@ -145,15 +145,21 @@ saucisse-seche:
 four-parts-in-a-round:
   parent: default
   template: four-parts-in-a-round
+  org:
+    subtitle: ~
   printableOn:
     - avery-round-80mm-2x3
+    - avery-round-88mm-2x3
+  certifications:
+    - bio
+    - consigne
 
 yaourt:
   parent: four-parts-in-a-round
   title: yaourt
-  subtitle: au lait de chèvre
+  subtitle: chèvre
   barcode: '9588607000391'
-  barcodeOptions: {showDigits: true, widthFactor: 1.5}
+  barcodeOptions: {widthFactor: 1.2}
   ingredients:
     1: <b>lait</b> de chèvre pasteurisé,
     3: ferments lactiques
