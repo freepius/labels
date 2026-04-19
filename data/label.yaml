@@ -150,9 +150,6 @@ four-parts-in-a-round:
   printableOn:
     - avery-round-80mm-2x3
     - avery-round-88mm-2x3
-  certifications:
-    - bio
-    - consigne
 
 yaourt:
   parent: four-parts-in-a-round
@@ -167,6 +164,9 @@ yaourt:
     - <tspan dx=200>430 g net
     - Conserver à +4-6 °C
     - 'DLC : voir côté'
+  certifications:
+    - bio
+    - consigne
 
 faisselle:
   parent: yaourt
@@ -186,6 +186,7 @@ glace-top-in-a-round:
     - À conserver à -18 °C
     - Ne pas recongeler un produit décongelé
     - 'DDM : <tspan dx="75">'
+  certifications: [bio]
 
 icecream:
   parent: default
@@ -198,7 +199,9 @@ icecream:
     subtitle: au lait de chèvre du Rove
   quantity: 960 mL net
   qrcode: "/images/qrcode/icecream.png"
+  barcode: '9588607000469'
   barcodeOptions: {showDigits: true, height: 30, widthFactor: 1.5}
+  certifications: [bio]
   ingredients:
     1: ~
     2: ~
@@ -212,10 +215,12 @@ icecream:
   versions:
     middle:
       quantity: 480 mL net
+      barcode: '9588607000452'
     small:
       quantity: 120 mL net
       parent: three-parts-rectangle-5of2
       template: icecream-small
+      barcode: '9588607000445'
       barcodeOptions: {showDigits: false, height: 30, widthFactor: 1}
       org:
         title: Glace paysanne
@@ -232,10 +237,6 @@ icecream_vanille:
   ingredients:
     1: <b>lait</b> de chèvre du Rove (72%),
     2: vanille noire de Madagascar* (3%),
-  barcode: '9588607000179'
-  versions:
-    middle: {barcode: '9588607000162'}
-    small: {barcode: '9588607000155'}
 
 icecream_fraise:
   title: Fraise
@@ -244,10 +245,6 @@ icecream_fraise:
     1: <b>lait</b> de chèvre du Rove (42%),
     2: fraise de la Drôme* (25%),
     7: jus de citron*,
-  barcode: '9588607000209'
-  versions:
-    middle: {barcode: '9588607000193'}
-    small: {barcode: '9588607000186'}
 
 icecream_chocolat:
   title: Chocolat
@@ -255,10 +252,6 @@ icecream_chocolat:
   ingredients:
     1: <b>lait</b> de chèvre du Rove (66%),
     2: poudre de cacao* (4%), chocolat noir 60%* (5%),
-  barcode: '9588607000230'
-  versions:
-    middle: {barcode: '9588607000223'}
-    small: {barcode: '9588607000216'}
 
 icecream_framboise:
   title: Framboise
@@ -267,10 +260,6 @@ icecream_framboise:
     1: <b>lait</b> de chèvre du Rove (47%),
     2: framboise d'Ardèche* (25%),
     7: jus de citron*,
-  barcode: '9588607000261'
-  versions:
-    middle: {barcode: '9588607000254'}
-    small: {barcode: '9588607000247'}
 
 icecream_noisette:
   title: Noisette
@@ -278,10 +267,6 @@ icecream_noisette:
   ingredients:
     1: <b>lait</b> de chèvre du Rove (65%),
     2: pâte de <b>noisette</b>* (9%),
-  barcode: '9588607000292'
-  versions:
-    middle: {barcode: '9588607000285'}
-    small: {barcode: '9588607000278'}
 
 icecream_chataigne:
   title: Châtaigne
@@ -289,10 +274,6 @@ icecream_chataigne:
   ingredients:
     1: <b>lait</b> de chèvre du Rove (60%),
     2: châtaigne AOP d'Ardèche* (16%),
-  barcode: '9588607000322'
-  versions:
-    middle: {barcode: '9588607000315'}
-    small: {barcode: '9588607000308'}
 
 icecream_safran:
   title: Safran
@@ -300,10 +281,6 @@ icecream_safran:
   ingredients:
     1: <b>lait</b> de chèvre du Rove (67%),
     2: safran de la Drôme* (0,01%),
-  barcode: '9588607000353'
-  versions:
-    middle: {barcode: '9588607000346'}
-    small: {barcode: '9588607000339'}
 
 icecream_yaourt:
   title: Yaourt
@@ -312,7 +289,3 @@ icecream_yaourt:
     1: <b>lait</b> de chèvre du Rove (33%),
     2: yaourt de la ferme (40%),
     7: jus de citron*,
-  barcode: '9588607000384'
-  versions:
-    middle: {barcode: '9588607000377'}
-    small: {barcode: '9588607000360'}
