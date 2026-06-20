@@ -9,7 +9,7 @@
 
 {% block body %}
     <!-- The label itself -->
-    {{ include(label.templateName, {label}, with_context = false, sandboxed = true) }}
+    {{ include(label.templateName, {label}, with_context = true, sandboxed = true) }}
 
     <!-- Menu to navigate through the available labels -->
     <nav id="labels">

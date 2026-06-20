@@ -131,6 +131,17 @@ saucisse-aux-herbes:
     gras de porc*, persil*, origan*, thym*, sel, poivre*. *agriculture bio
   quantity: 300g net
 
+chipolatas-troupeou:
+  parent: three-parts-rectangle-5of2
+  title: Chipolatas <small>de chevreau</small>
+  subtitle: Natures x 6
+  certifications: [bio]
+  barcode: '9588607000476'
+  extraInfo:
+    - Conserver à -18 °C
+    - Ne pas recongeler un produit décongelé
+    - <b>Surgelées le 12 / 06 / 2026</b>
+
 saucisse-seche:
   org:
     subtitle: Fabriqué le 22/07/2025
@@ -159,7 +170,7 @@ yaourt:
   barcodeOptions: {widthFactor: 1.2}
   ingredients:
     1: <b>lait</b> de chèvre pasteurisé,
-    3: ferments lactiques
+    2: ferments lactiques
   extraInfo:
     - <tspan dx=200>430 g net
     - Conserver à +4-6 °C
@@ -173,7 +184,9 @@ faisselle:
   title: faisselle
   barcode: '9588607000407'
   ingredients:
-    3: ferments, présure
+    1: <b>lait</b> de chèvre cru,
+    2: ferments, présure
+    3: <tspan dx=30>&nbsp;</tspan>
   extraInfo:
     0: <tspan dx=200>450 g net
 
@@ -229,7 +242,7 @@ icecream:
         - Sortir 10 min. avant de déguster
         - À conserver à -18 °C
         - Ne pas recongeler un produit décongelé
-        - 'DDM :'
+        - 'DDM : <b>19 / 06 / 2027</b>'
 
 icecream_vanille:
   title: Vanille
@@ -250,8 +263,8 @@ icecream_chocolat:
   title: Chocolat
   subtitle: noir intense
   ingredients:
-    1: <b>lait</b> de chèvre du Rove (66%),
-    2: poudre de cacao* (4%), chocolat noir 60%* (5%),
+    1: <b>lait</b> de chèvre du Rove (68%),
+    2: poudre de cacao* (3%), chocolat noir 60%* (4%),
 
 icecream_framboise:
   title: Framboise
@@ -272,8 +285,8 @@ icecream_chataigne:
   title: Châtaigne
   subtitle: AOP d'Ardèche
   ingredients:
-    1: <b>lait</b> de chèvre du Rove (60%),
-    2: châtaigne AOP d'Ardèche* (16%),
+    1: <b>lait</b> de chèvre du Rove (62%),
+    2: châtaigne AOP d'Ardèche* (14%),
 
 icecream_safran:
   title: Safran
@@ -286,6 +299,5 @@ icecream_yaourt:
   title: Yaourt
   subtitle: de la ferme
   ingredients:
-    1: <b>lait</b> de chèvre du Rove (33%),
-    2: yaourt de la ferme (40%),
-    7: jus de citron*,
+    1: <b>lait</b> de chèvre du Rove (29%),
+    2: yaourt de la ferme (44%),

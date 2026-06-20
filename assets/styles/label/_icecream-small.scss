@@ -1,6 +1,6 @@
 &.three-parts-rectangle[class*="icecream_"] {
     --width-main: 30%;
-    --width-aside: 30%;
+    --width-aside: 30% !important;
 
     header {
         margin-top: $space-lg;
@@ -11,7 +11,7 @@
     }
 
     main {
-        height: 80%;
+        height: 70%;
 
         h1 {
             align-self: end;

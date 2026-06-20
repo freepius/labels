@@ -1,4 +1,5 @@
-&.saucisse-seche {
+&.saucisse-seche,
+&.chipolatas-troupeou {
     main {
         height: 80%;
 
@@ -7,7 +8,6 @@
 
             small {
                 color: black;
-                font-size: 0.8em;
                 -webkit-text-stroke: 0;
             }
         }
@@ -29,4 +29,9 @@
             }
         }
     }
+}
+
+&.three-parts-rectangle.logo-goat header h1 {
+    align-content: end;
+    font-size: 2.8em;
 }

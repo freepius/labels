@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% set label = include(label.templateName, {label}, with_context = false, sandboxed = true) %}
+{% set label = include(label.templateName, {label}, with_context = true, sandboxed = true) %}
 
 {% block body_class %}container-page{% endblock %}
 

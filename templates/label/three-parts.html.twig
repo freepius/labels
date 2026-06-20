@@ -2,7 +2,7 @@
 {% set headerImg = headerImg ?? org.logo ?? null %}
 {% set mainImg = mainImg ?? label.logo ?? null %}
 
-<article class="{{ label.parentId }} {{ label.id }} {{ label.cssClasses }}">
+<article class="{{ label.parentId }} {{ label.id }} {{ label.cssClasses }} {{ loadedVersions|join(' ') }}">
     <header>
         <h1 {% if headerImg %}style="background-image: url({{ asset(headerImg) }});"{% endif %}>
             {{ org.title }}
