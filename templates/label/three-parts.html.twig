@@ -20,9 +20,9 @@
             {{ label.title|raw }}
         </h1>
 
-        {% if label.subtitle %}
+        {% if label.subtitle|escape('html') %}
             <h2 {% if label.subtitle|length > 15 %}class="long"{% endif %}>
-                {{ label.subtitle }}
+                {{ label.subtitle|raw }}
             </h2>
         {% endif %}
     </main>

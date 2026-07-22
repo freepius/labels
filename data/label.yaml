@@ -198,6 +198,7 @@ glace-top-in-a-round:
     - Sortir 10 min. avant de déguster
     - À conserver à -18 °C
     - Ne pas recongeler un produit décongelé
+    #- 'DDM : 16 / 07 / 2027'
     - 'DDM : <tspan dx="75">'
   certifications: [bio]
 
@@ -242,35 +243,35 @@ icecream:
         - Sortir 10 min. avant de déguster
         - À conserver à -18 °C
         - Ne pas recongeler un produit décongelé
-        - 'DDM : <b>19 / 06 / 2027</b>'
+        - 'DDM : <b>16 / 07 / 2027</b>'
 
 icecream_vanille:
   title: Vanille
   subtitle: noire de Madagascar
   ingredients:
-    1: <b>lait</b> de chèvre du Rove (72%),
+    1: <b>lait</b> de chèvre du Rove (70%),
     2: vanille noire de Madagascar* (3%),
 
 icecream_fraise:
   title: Fraise
-  subtitle: de la Drôme
+  subtitle: de Drôme-Ardèche
   ingredients:
-    1: <b>lait</b> de chèvre du Rove (42%),
-    2: fraise de la Drôme* (25%),
+    1: <b>lait</b> de chèvre du Rove (45,5%),
+    2: fraise de Drôme-Ardèche* (25%),
     7: jus de citron*,
 
 icecream_chocolat:
   title: Chocolat
   subtitle: noir intense
   ingredients:
-    1: <b>lait</b> de chèvre du Rove (68%),
-    2: poudre de cacao* (3%), chocolat noir 60%* (4%),
+    1: <b>lait</b> de chèvre du Rove (64,5%),
+    2: poudre de cacao* (3,5%), chocolat noir 60%* (5,5%),
 
 icecream_framboise:
   title: Framboise
   subtitle: d'Ardèche
   ingredients:
-    1: <b>lait</b> de chèvre du Rove (47%),
+    1: <b>lait</b> de chèvre du Rove (45%),
     2: framboise d'Ardèche* (25%),
     7: jus de citron*,
 
@@ -278,7 +279,7 @@ icecream_noisette:
   title: Noisette
   subtitle: gourmande
   ingredients:
-    1: <b>lait</b> de chèvre du Rove (65%),
+    1: <b>lait</b> de chèvre du Rove (64%),
     2: pâte de <b>noisette</b>* (9%),
 
 icecream_chataigne:
@@ -301,3 +302,18 @@ icecream_yaourt:
   ingredients:
     1: <b>lait</b> de chèvre du Rove (29%),
     2: yaourt de la ferme (44%),
+
+icecream_citron:
+  title: Citron
+  subtitle: jus, zeste <b>et morceaux confits</b>
+  ingredients:
+    1: <b>lait</b> de chèvre du Rove (64%),
+    2: citron* (jus 7%, zeste 0,3%, morceaux confits 3,8%),
+
+icecream_miel-tilleul:
+  title: Miel de tilleul
+  subtitle: ''
+  ingredients:
+    1: <b>lait</b> de chèvre du Rove (70%),
+    2: miel de tilleul* (7%),
+    3: fleurs de tilleul* (0,5%),
