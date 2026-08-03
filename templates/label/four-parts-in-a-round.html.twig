@@ -4,7 +4,7 @@
     <!-- Organization title and short address -->
     <header>
         <!-- The title follows a curved path -->
-        <svg viewBox="0 0 600 600">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
             <defs>
                 <path
                     id="header-arc"
@@ -47,14 +47,14 @@
 
     <!-- Various information about organization and/or label, following a curved path  -->
     <aside>
-        <svg viewBox="0 0 600 600" style="z-index:1000">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" style="z-index:1000">
             <defs>
                 <path
                     id="extra-info-arc"
                     d="M 495,100 A 280,280 0 1,1 105,100"
                 />
             </defs>
-                <text textLength="1000" lengthAdjust="spacing"  dy="10">
+                <text textLength="1200" lengthAdjust="spacing"  dy="10">
                     <textPath href="#extra-info-arc" startOffset="5%">
                         {{ include('label/element/ingredients.twig', {label: label, format: 'svg'}) }}
                         {{ label.quantity ?? null }}

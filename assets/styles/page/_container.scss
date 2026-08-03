@@ -2,5 +2,33 @@ body.container-page {
     @media screen {
         width: 100vw;
         padding: $space-lg 0;
+
+        > nav#dynamic-fields {
+            // Dynamic placeholders control panel (page preview).
+            position: fixed;
+            right: 1em;
+            top: 1em;
+
+            ul {
+                display: grid;
+                gap: $space-sm;
+            }
+
+            li {
+                display: grid;
+                gap: calc($space-sm / 2);
+            }
+
+            input {
+                min-width: 12rem;
+                padding: 0.3em 0.5em;
+            }
+
+            #dynamic-fields-reset {
+                // Keep reset action visually grouped with generated inputs.
+                margin-top: $space-sm;
+                padding: 0.3em 0.6em;
+            }
+        }
     }
 }

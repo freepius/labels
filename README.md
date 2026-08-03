@@ -70,3 +70,55 @@ Ajoutez `?v=version1,version2` pour charger une ou plusieurs versions :
 4) **Définir des versions** pour les variantes d’une même étiquette.
 
 5) **Tester** via les routes `/label/{id}` et `/page/{id}`.
+
+## Placeholders dynamiques ([[...]])
+
+Le rendu supporte des placeholders éditables en direct dans les valeurs YAML.
+
+### Syntaxes supportées
+
+- `[[KEY]]`
+- `[[KEY : valeur par defaut]]`
+
+Exemples :
+
+- `DDM : [[DDM]]`
+- `DDM : [[DDM : 03 / 08 / 2027]]`
+
+Regle importante : la valeur par defaut doit rester du texte simple.
+Si un rendu HTML ou SVG particulier est necessaire, le balisage doit entourer
+le placeholder au lieu d'etre mis dedans.
+
+Exemples corrects :
+
+- HTML : `DDM : <b>[[DDM]]</b>`
+- SVG : `DDM : <tspan dx="75">[[DDM]]</tspan>`
+
+Exemple incorrect :
+
+- `DDM : [[DDM : <tspan dx="75">]]`
+
+### Comportement au rendu
+
+- La valeur par défaut est affichée immédiatement.
+- Un panneau **Valeurs dynamiques** est ajouté sur la page avec un input par `KEY`.
+- La saisie met à jour toutes les occurrences de la même `KEY` en temps réel.
+- Le bouton **Réinitialiser** remet toutes les valeurs à leur défaut.
+
+### Persistance URL
+
+- Les valeurs éditées sont stockées dans la query string pour partager/recharger la vue :
+
+- format de cle : `dyn.KEY`
+- exemple : `?dyn.DDM=03%20%2F%2008%20%2F%202027`
+
+- Si une valeur est égale au défaut, son paramètre `dyn.KEY` est retiré de l'URL.
+
+### Compatibilite HTML et SVG
+
+Le parseur inspecte les noeuds texte du DOM, puis cree automatiquement :
+
+- un `span` en contexte HTML
+- un `tspan` en contexte SVG
+
+Cela permet d'utiliser la meme syntaxe dans des templates HTML classiques et dans des contenus SVG (`text`, `textPath`, etc.).
