@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
+    const queryKeyPrefix = 'dyn.';
+
     /**
      * Update the version (v) query parameter in the URL based on checked versions.
      * Then reload the page.
@@ -18,6 +20,38 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         window.location.href = url.toString();
+    }
+
+    /**
+     * Keep static navigation links in sync with current dynamic query params.
+     */
+    function syncDynamicQueryInNavigationLinks() {
+        const url = new URL(window.location.href);
+        const dynamicEntries = [];
+
+        url.searchParams.forEach((value, key) => {
+            if (key.startsWith(queryKeyPrefix)) {
+                dynamicEntries.push([key, value]);
+            }
+        });
+
+        document.querySelectorAll('#pages a[href]').forEach(link => {
+            const nextUrl = new URL(link.getAttribute('href'), window.location.origin);
+
+            const keysToDelete = [];
+            nextUrl.searchParams.forEach((_, key) => {
+                if (key.startsWith(queryKeyPrefix)) {
+                    keysToDelete.push(key);
+                }
+            });
+            keysToDelete.forEach(key => nextUrl.searchParams.delete(key));
+
+            dynamicEntries.forEach(([key, value]) => {
+                nextUrl.searchParams.set(key, value);
+            });
+
+            link.setAttribute('href', `${nextUrl.pathname}${nextUrl.search}${nextUrl.hash}`);
+        });
     }
 
     /**
@@ -75,7 +109,6 @@ document.addEventListener('DOMContentLoaded', function () {
         // KEY is constrained to letters/digits/_/- to keep query parameters predictable.
         // Keep the global syntax flexible, but preserve NBSP specifically inside default values.
         const placeholderPattern = /\[\[\s*([\w-]+)\s*(?::[ \t\r\n]*(.*?)[ \t\r\n]*)?\]\]/g;
-        const queryKeyPrefix = 'dyn.';
         const svgNamespace = 'http://www.w3.org/2000/svg';
         const tokens = [];
         const initialValues = new Map();
@@ -246,6 +279,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 applyValue(key, value);
                 updateQueryValue(key, value, defaultValue);
+                syncDynamicQueryInNavigationLinks();
             });
         });
 
@@ -272,7 +306,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 applyValue(key, defaultValue);
                 updateQueryValue(key, defaultValue, defaultValue);
             });
+
+            syncDynamicQueryInNavigationLinks();
         });
+
+        syncDynamicQueryInNavigationLinks();
     }
 
     document.querySelectorAll('input[name="version"]').forEach(input => {
