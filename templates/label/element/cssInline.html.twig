@@ -1,0 +1,5 @@
+{% if label.cssInline is defined %}
+    <style type="text/css">
+        {{ label.cssInline|raw }}
+    </style>
+{% endif %}
