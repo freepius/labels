@@ -1,9 +1,10 @@
 {% if label.barcode ?? false %}
     {% set options = label.barcodeOptions ?? {} %}
+    {% set type = options.type ?? null %}
     {% set showDigits = options.showDigits ?? false %}
     {% set widthFactor = options.widthFactor ?? 1 %}
     {% set height = options.height ?? 30 %}
-    {% set barcodePath = label.barcode|ean13_barcode(showDigits, widthFactor, height) %}
+    {% set barcodePath = label.barcode|barcode(type, showDigits, widthFactor, height) %}
 
     <img class="barcode" src="{{ asset(barcodePath) }}" />
 {% endif %}

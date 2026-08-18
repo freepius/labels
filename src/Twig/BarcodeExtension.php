@@ -8,7 +8,6 @@ use Twig\TwigFilter;
 
 /**
  * Twig extension for generating barcodes.
- * Currently, only EAN-13 barcodes are supported.
  */
 class BarcodeExtension extends AbstractExtension
 {
@@ -32,39 +31,39 @@ class BarcodeExtension extends AbstractExtension
     public function getFilters(): array
     {
         return [
-            // usage twig : {{ '329299000123'|ean13_barcode }}
-            new TwigFilter('ean13_barcode', [$this, 'ean13'], ['is_safe' => ['html']]),
+            // usage twig : {{ '329299000123'|barcode('ean13') }}
+            new TwigFilter('barcode', [$this, 'barcode'], ['is_safe' => ['html']]),
         ];
     }
 
     /**
-     * Generate an EAN-13 barcode SVG image.
+     * Generate a barcode SVG image for a given code and type.
      *
-     * @param string|int $code  12 or 13 digits (if 12, the checksum is calculated)
-     * @param bool $showDigits  Whether to add the digits below the barcode
-     * @param int $widthFactor  Thickness of the bars (virtual pixels)
-     * @param int $height       Height of the bars (virtual pixels)
+     * @param string|int $code   The code to encode
+     * @param string|null $type  The barcode type (e.g., 'ean13', 'c39', etc.) If null, the type will be guessed.
+     * @param bool $showDigits   Whether to add the digits below the barcode
+     * @param int $widthFactor   Thickness of the bars (virtual pixels)
+     * @param int $height        Height of the bars (virtual pixels)
      *
      * @return string File path to the generated SVG barcode image, relative to the asset folder.
      *
-     * @throws \InvalidArgumentException if the code is not valid (not 12 or 13 digits).
      * @throws \RuntimeException if the SVG file cannot be written.
      */
-
-    public function ean13(string|int $code, bool $showDigits = false, float $widthFactor = 1, float $height = 30): string
+    public function barcode(string|int $code, ?string $type = null, bool $showDigits = false, float $widthFactor = 1, float $height = 30): string
     {
         $digits = preg_replace('/\D+/', '', (string) $code);
 
-        if (12 === strlen($digits)) {
+        if (null === $type) {
+            $type = $this->guessBarcodeType($digits);
+        }
+
+        if ('ean13' === $type && 12 === strlen($digits)) {
             $digits .= $this->ean13Checksum($digits);
         }
 
-        if (13 !== strlen($digits)) {
-            throw new \InvalidArgumentException("{$digits} is not a valid EAN-13 code. It must be 12 or 13 digits long.");
-        }
-
         $filename = sprintf(
-            '%s-%d-%s-%s.svg',
+            '%s-%s-%d-%s-%s.svg',
+            $type,
             $digits,
             (int) $showDigits,
             str_replace('.', '_', $widthFactor),
@@ -76,7 +75,7 @@ class BarcodeExtension extends AbstractExtension
         }
 
         $gen = new BarcodeGeneratorSVG();
-        $svg = $gen->getBarcode($digits, $gen::TYPE_EAN_13, $widthFactor, $height);
+        $svg = $gen->getBarcode($digits, $type, $widthFactor, $height);
 
         $out = $this->twig->render(
             'label/element/barcode-plus-digits.svg.twig',
@@ -89,7 +88,6 @@ class BarcodeExtension extends AbstractExtension
         );
 
         // Save the SVG to a file
-        dump($out);
         if (false === file_put_contents($this->realPath . $filename, $out)) {
             throw new \RuntimeException("Failed to write {$digits} barcode SVG to {$this->realPath}{$filename}");
         }
@@ -116,5 +114,20 @@ class BarcodeExtension extends AbstractExtension
         }
         $total = $sumOdd + 3 * $sumEven;
         return (10 - ($total % 10)) % 10;
+    }
+
+    /**
+     * Guess the barcode type based on the length of the digits.
+     */
+    protected function guessBarcodeType(string $digits): string
+    {
+        $length = strlen($digits);
+
+        return match ($length) {
+            8 => 'ean8',
+            12, 13 => 'ean13',
+            14 => 'itf14',
+            default => 'c39', // default to Code 39 for other lengths
+        };
     }
 }
