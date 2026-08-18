@@ -24,6 +24,15 @@ three-parts-rectangle-5of2:
     - avery-rectangle-2x6
     - avery-rectangle-2x7
 
+three-parts-rectangle-3of2:
+  parent: default
+  template: three-parts
+  cssClasses:
+    - three-parts-rectangle
+    - format-3of2
+  printableOn:
+    - avery-rectangle-2x4
+
 confiture-prune:
   parent: three-parts-rectangle-5of2
   title: Confiture <small>cuite au feu de bois</small>
@@ -152,6 +161,40 @@ saucisse-seche:
     gras de porc*, vin rouge*, sel, ail*, sucre*, poivre*. *agriculture bio
   quantity: environ 170g net
   barcode: '9588607000414'
+
+saucisson-sec:
+  org:
+    subtitle: Fabriqué le 12/06/2026
+  parent: three-parts-rectangle-3of2
+  cssInline: "
+    .label.three-parts-rectangle {
+      --width-header: 30%;
+      --width-main: 42%;
+      --width-aside: 26%;
+    }
+
+    .label.three-parts-rectangle.logo-goat header h1 {
+      font-size: 2.35em;
+      line-height: 0.85em;
+      background-position-y: bottom;
+    }
+  "
+  title: Saucisson sec <small>de chevreau</small>
+  subtitle: ≈ 13 € pièce <small>(43 €/kg)</small>
+  ingredients:
+    - viande caprine* (85%),
+    - gras de porc*, vin rouge*, sel non traité, poivre*, lactose*, dextrose*, sucre de canne*, sel de mer. *agriculture bio.
+    - "Conservateurs : nitrate de potassium (E252), boyaux naturels."
+  extraInfo:
+    - Viande de chevreaux élevés à la ferme, sous les mères et en pâturage.
+    - Transformé par Troupéou – Agrément sanitaire FR 26.214.031 CE
+    - Produit sujet à dessiccation
+    - À consommer de préférence avant le 04/11/2026
+  quantity: ≈ 300g net
+  certifications: [bio]
+  barcode: '7007'
+  barcodeOptions: {showDigits: true, height: 30, widthFactor: 1.5}
+  qrcode: "/images/qrcode/viande.png"
 
 four-parts-in-a-round:
   parent: default
