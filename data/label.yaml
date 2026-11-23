@@ -65,6 +65,39 @@ châtaignes_entières:
   title: Châtaignes entières
   quantity: 240g net
 
+tartichèvre:
+  parent: three-parts-rectangle-5of2
+  title: Tarti'Chèvre
+  subtitle: ail & fines herbes
+  barcode: '9588607000483'
+  quantity: 250g net
+  barcodeOptions: {height: 30, widthFactor: 1.5}
+  ingredients:
+    1: <b>lait</b> de chèvre cru,
+    2: ail, herbes de Provence, sel, poivre,
+    3: ferments lactiques, présure
+  extraInfo:
+    - Conserver à +0-4 °C
+    - 'DLC : 10/10/2026'
+  certifications:
+    - bio
+    - consigne
+  cssInline: "
+    .label.three-parts-rectangle {
+      --width-header: 34%;
+      --width-main: 46%;
+      --width-aside: 18%;
+    }
+
+    .label.three-parts-rectangle main {
+      height: 80%;
+    }
+
+    .label.three-parts-rectangle header h2 {
+      font-size: 1.2em;
+    }
+  "
+
 terrine:
   parent: three-parts-rectangle-5of2
   title: Terrine de Chevreau
@@ -105,32 +138,53 @@ rillettes:
   title: Rillettes de Chevreau
   ingredients: viande de chevreaux élevés à la ferme (75%), gras de porc* (20%), oignons*, sel, poivre*. *agriculture bio
 
-plat-cuisine:
+terrine-troupeou:
   parent: three-parts-rectangle-5of2
-  quantity: 360g net
-  versions:
-    grand:
-      quantity: 710g net
+  title: Terrine de Chevreau
+  quantity: 200g net
+  certifications: [bio]
+  barcode: '9588607000018'
+  ingredients:
+    1: viande de chevreaux élevés à la ferme
+    2: ~
+    3: farine de blé*, <b>lait</b>*, sel, poivre*, <b>œuf</b>*.
+    4: "*agriculture bio, <b>allergènes</b>"
 
-blanquette:
-  parent: plat-cuisine
-  title: Blanquette de chevreau
-  ingredients: viande caprine 60% (élevage à la ferme), oignons*, carottes*, vin blanc* (<b>sulfites</b>),
-    <b>crème</b>*, herbes aromatiques*, sel, poivre*, amidon de maïs*. *agriculture bio, <b>allergènes</b>
+terrine-troupeou_fromage:
+  subtitle: fromage de chèvre
+  ingredients:
+    2: (63%), fromage demi-sec de chèvres du Rove* (15%),
+
+terrine-troupeou_chataignes:
+  subtitle: châtaignes aop d'ardèche
+  ingredients:
+    2: (63%), châtaignes AOP d'Ardèche* (15%),
+
+terrine-troupeou_provence:
+  subtitle: Provence
+  ingredients:
+    2: (71%), olives noires de Nyons* (6%), thym*, romarin*, ail*,
 
 tajine:
-  parent: plat-cuisine
+  parent: three-parts-rectangle-5of2
   title: Tajine de chevreau
-  subtitle: pruneaux, raisins, miel, épices
-  ingredients: viande caprine 55% (élevage à la ferme), oignons*, pruneaux* (7%), raisins* (7%),
-    miel* (2%), épices*, sel, poivre*. *agriculture bio
+  quantity: 350g net
+  certifications: [bio]
+  barcode: '9588607000094'
+  versions:
+    grand:
+      quantity: 700g net
+      barcode: '9588607000100'
 
-mijote-romarin-moutarde:
-  parent: plat-cuisine
-  title: Mijoté de chevreau
-  subtitle: Romarin & Moutarde
-  ingredients: viande caprine 60% (élevage à la ferme), vin blanc* (<b>sulfites</b>), <b>moutarde</b>* (2%), romarin* (2%),
-    <b>crème</b>*, sel, poivre*, amidon de maïs*. *agriculture bio, <b>allergènes</b>
+tajine_noire:
+  subtitle: pruneaux & olives noires
+  ingredients: viande de chevreaux élevés à la ferme (65%), pruneaux* (6%), raisins secs* (6%),
+    olives noires* (6%), amandes* (6%), oignons*, miel*, épices*, sel, poivre*. *agriculture bio
+
+tajine_rouge:
+  subtitle: citron confit & olives vertes
+  ingredients: viande de chevreaux élevés à la ferme (65%), citrons confits salés* (6%), abricots secs* (6%),
+    olives vertes* (6%), amandes* (6%), oignons*, épices*, sel, poivre*. *agriculture bio
 
 saucisse-aux-herbes:
   parent: three-parts-rectangle-5of2
@@ -164,7 +218,7 @@ saucisse-seche:
 
 saucisson-sec:
   org:
-    subtitle: Fabriqué le 12/06/2026
+    subtitle: Fabriqué le 06/08/2026
   parent: three-parts-rectangle-3of2
   cssInline: "
     .label.three-parts-rectangle {
@@ -178,9 +232,16 @@ saucisson-sec:
       line-height: 0.85em;
       background-position-y: bottom;
     }
+
+    .label .qrcode {
+        position: absolute;
+        top: -20.5em;
+        left: -12em;
+        height: 6em !important;
+    }
   "
   title: Saucisson sec <small>de chevreau</small>
-  subtitle: ≈ 13 € pièce <small>(43 €/kg)</small>
+  subtitle: 13 € pièce
   ingredients:
     - viande caprine* (85%),
     - gras de porc*, vin rouge*, sel non traité, poivre*, lactose*, dextrose*, sucre de canne*, sel de mer. *agriculture bio.
@@ -189,8 +250,8 @@ saucisson-sec:
     - Viande de chevreaux élevés à la ferme, sous les mères et en pâturage.
     - Transformé par Troupéou – Agrément sanitaire FR 26.214.031 CE
     - Produit sujet à dessiccation
-    - À consommer de préférence avant le 04/11/2026
-  quantity: ≈ 300g net
+    - À consommer de préférence avant le 06/12/2026
+  quantity: ≈ 350g net
   certifications: [bio]
   barcode: '7007'
   barcodeOptions: {showDigits: true, height: 30, widthFactor: 1.5}
@@ -321,7 +382,7 @@ icecream_noisette:
   title: Noisette
   subtitle: gourmande
   ingredients:
-    1: <b>lait</b> de chèvre du Rove* (64%),
+    1: <b>lait</b> de chèvre du Rove* (66,5%),
     2: pâte de <b>noisette</b>* (9%),
 
 icecream_chataigne:
